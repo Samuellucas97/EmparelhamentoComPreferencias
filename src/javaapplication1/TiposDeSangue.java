@@ -9,7 +9,7 @@ package javaapplication1;
  *
  * @author samuellucas97
  */
-public enum tiposDeSangue {
+public enum TiposDeSangue {
     A_positivo,
     A_negativo,
     B_positivo, 

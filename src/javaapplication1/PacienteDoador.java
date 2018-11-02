@@ -13,13 +13,13 @@ public class PacienteDoador {
     
     private String nomePaciente;
     private String nomeDoador;
-    private tiposDeSangue tipoDeSanguePaciente;
-    private tiposDeSangue tipoDeSangueDoador;
+    private TiposDeSangue tipoDeSanguePaciente;
+    private TiposDeSangue tipoDeSangueDoador;
     private ArrayList<String> listaHLADoador;
     private ArrayList<String> listaHLAReceptor;
     private ArrayList<String> listaDePreferencias;
 
-    public PacienteDoador(String nomePaciente, String nomeDoador, tiposDeSangue tipoDeSanguePaciente, tiposDeSangue tipoDeSangueDoador) {
+    public PacienteDoador(String nomePaciente, String nomeDoador, TiposDeSangue tipoDeSanguePaciente, TiposDeSangue tipoDeSangueDoador) {
         this.listaHLADoador = new ArrayList<String>();
         this.listaHLAReceptor = new ArrayList<String>();
         this.listaDePreferencias = new ArrayList<String>();
@@ -46,19 +46,19 @@ public class PacienteDoador {
         this.nomeDoador = nomeDoador;
     }
 
-    public tiposDeSangue getTipoDeSanguePaciente() {
+    public TiposDeSangue getTipoDeSanguePaciente() {
         return tipoDeSanguePaciente;
     }
 
-    public void setTipoDeSanguePaciente(tiposDeSangue tipoDeSanguePaciente) {
+    public void setTipoDeSanguePaciente(TiposDeSangue tipoDeSanguePaciente) {
         this.tipoDeSanguePaciente = tipoDeSanguePaciente;
     }
 
-    public tiposDeSangue getTipoDeSangueDoador() {
+    public TiposDeSangue getTipoDeSangueDoador() {
         return tipoDeSangueDoador;
     }
 
-    public void setTipoDeSangueDoador(tiposDeSangue tipoDeSangueDoador) {
+    public void setTipoDeSangueDoador(TiposDeSangue tipoDeSangueDoador) {
         this.tipoDeSangueDoador = tipoDeSangueDoador;
     }
 
