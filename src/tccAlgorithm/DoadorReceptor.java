@@ -3,39 +3,39 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication1;
+package tccAlgorithm;
 import java.util.ArrayList;
 /**
  *
  * @author samuellucas97
  */
-public class PacienteDoador {
+public class DoadorReceptor {
     
-    private String nomePaciente;
+    private String nomeReceptor;
     private String nomeDoador;
-    private TiposDeSangue tipoDeSanguePaciente;
+    private TiposDeSangue tipoDeSangueReceptor;
     private TiposDeSangue tipoDeSangueDoador;
     private ArrayList<String> listaHLADoador;
     private ArrayList<String> listaHLAReceptor;
     private ArrayList<String> listaDePreferencias;
 
-    public PacienteDoador(String nomePaciente, String nomeDoador, TiposDeSangue tipoDeSanguePaciente, TiposDeSangue tipoDeSangueDoador) {
+    public DoadorReceptor(String nomeReceptor, String nomeDoador, TiposDeSangue tipoDeSangueReceptor, TiposDeSangue tipoDeSangueDoador) {
         this.listaHLADoador = new ArrayList<String>();
         this.listaHLAReceptor = new ArrayList<String>();
         this.listaDePreferencias = new ArrayList<String>();
         
-        this.nomePaciente = nomePaciente;
+        this.nomeReceptor = nomeReceptor;
         this.nomeDoador = nomeDoador;
-        this.tipoDeSanguePaciente = tipoDeSanguePaciente;
+        this.tipoDeSangueReceptor = tipoDeSangueReceptor;
         this.tipoDeSangueDoador = tipoDeSangueDoador;
     }
     
-    public String getNomePaciente() {
-        return nomePaciente;
+    public String getNomeReceptor() {
+        return nomeReceptor;
     }
 
-    public void setNomePaciente(String nomePaciente) {
-        this.nomePaciente = nomePaciente;
+    public void setNomeReceptor(String nomeReceptor) {
+        this.nomeReceptor = nomeReceptor;
     }
 
     public String getNomeDoador() {
@@ -46,12 +46,12 @@ public class PacienteDoador {
         this.nomeDoador = nomeDoador;
     }
 
-    public TiposDeSangue getTipoDeSanguePaciente() {
-        return tipoDeSanguePaciente;
+    public TiposDeSangue getTipoDeSangueReceptor() {
+        return tipoDeSangueReceptor;
     }
 
-    public void setTipoDeSanguePaciente(TiposDeSangue tipoDeSanguePaciente) {
-        this.tipoDeSanguePaciente = tipoDeSanguePaciente;
+    public void setTipoDeSangueReceptor(TiposDeSangue tipoDeSangueReceptor) {
+        this.tipoDeSangueReceptor = tipoDeSangueReceptor;
     }
 
     public TiposDeSangue getTipoDeSangueDoador() {

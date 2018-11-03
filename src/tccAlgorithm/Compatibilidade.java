@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication1;
+package tccAlgorithm;
 
 /**
  *
  * @author samuellucas97
  */
-public class CompatibilidadeSanguinea {
+public class Compatibilidade {
 	
-     public boolean compatibilidadeSanguinea(PacienteDoador receptor, PacienteDoador doador){
-    	if (receptor.getTipoDeSanguePaciente() == TiposDeSangue.A_positivo) {
+     public boolean compatibilidadeSanguinea(DoadorReceptor doador, DoadorReceptor receptor){
+    	if (receptor.getTipoDeSangueReceptor() == TiposDeSangue.A_positivo) {
     		if (doador.getTipoDeSangueDoador() == TiposDeSangue.A_positivo) {
     			return true;
     		} else if (doador.getTipoDeSangueDoador() == TiposDeSangue.A_negativo) {
@@ -24,7 +24,7 @@ public class CompatibilidadeSanguinea {
     		} else {
     			return false;
     		}
-		} else if (receptor.getTipoDeSanguePaciente() == TiposDeSangue.A_negativo) {
+		} else if (receptor.getTipoDeSangueReceptor() == TiposDeSangue.A_negativo) {
     		if (doador.getTipoDeSangueDoador() == TiposDeSangue.A_negativo) {
     			return true;
     		} else if (doador.getTipoDeSangueDoador() == TiposDeSangue.O_negativo) {
@@ -32,7 +32,7 @@ public class CompatibilidadeSanguinea {
     		} else {
     			return false;
     		}
-		} else if (receptor.getTipoDeSanguePaciente() == TiposDeSangue.B_positivo) {
+		} else if (receptor.getTipoDeSangueReceptor() == TiposDeSangue.B_positivo) {
     		if (doador.getTipoDeSangueDoador() == TiposDeSangue.B_positivo) {
     			return true;
     		} else if (doador.getTipoDeSangueDoador() == TiposDeSangue.B_negativo) {
@@ -44,7 +44,7 @@ public class CompatibilidadeSanguinea {
     		} else {
     			return false;
     		}
-		} else if (receptor.getTipoDeSanguePaciente() == TiposDeSangue.B_negativo) {
+		} else if (receptor.getTipoDeSangueReceptor() == TiposDeSangue.B_negativo) {
     		if (doador.getTipoDeSangueDoador() == TiposDeSangue.B_negativo) {
     			return true;
     		} else if (doador.getTipoDeSangueDoador() == TiposDeSangue.O_negativo) {
@@ -52,7 +52,7 @@ public class CompatibilidadeSanguinea {
     		} else {
     			return false;
     		}
-		} else if (receptor.getTipoDeSanguePaciente() == TiposDeSangue.AB_positivo) {
+		} else if (receptor.getTipoDeSangueReceptor() == TiposDeSangue.AB_positivo) {
 			if (doador.getTipoDeSangueDoador() == TiposDeSangue.A_positivo) {
     			return true;
     		} else if (doador.getTipoDeSangueDoador() == TiposDeSangue.A_negativo) {
@@ -77,7 +77,7 @@ public class CompatibilidadeSanguinea {
 			 * Assim, não precisaria das condições, e sim apenas um 
 			 * return true;
 			 * */  
-		} else if (receptor.getTipoDeSanguePaciente() == TiposDeSangue.AB_negativo) {
+		} else if (receptor.getTipoDeSangueReceptor() == TiposDeSangue.AB_negativo) {
     		if (doador.getTipoDeSangueDoador() == TiposDeSangue.A_negativo) {
     			return true;
     		} else if (doador.getTipoDeSangueDoador() == TiposDeSangue.B_negativo) {
@@ -89,7 +89,7 @@ public class CompatibilidadeSanguinea {
     		} else {
     			return false;
     		}
-		} else if (receptor.getTipoDeSanguePaciente() == TiposDeSangue.O_positivo) {
+		} else if (receptor.getTipoDeSangueReceptor() == TiposDeSangue.O_positivo) {
     		if (doador.getTipoDeSangueDoador() == TiposDeSangue.O_positivo) {
     			return true;
     		} else if (doador.getTipoDeSangueDoador() == TiposDeSangue.O_negativo) {
@@ -97,7 +97,7 @@ public class CompatibilidadeSanguinea {
     		} else {
     			return false;
     		}
-		}  else if (receptor.getTipoDeSanguePaciente() == TiposDeSangue.O_negativo) {
+		}  else if (receptor.getTipoDeSangueReceptor() == TiposDeSangue.O_negativo) {
     		if (doador.getTipoDeSangueDoador() == TiposDeSangue.O_negativo) {
     			return true;
     		} else {
@@ -106,4 +106,9 @@ public class CompatibilidadeSanguinea {
 		} else
         return false;
     }
+     
+     public boolean compatibilidadeHLA(DoadorReceptor doador, DoadorReceptor receptor) {
+    	// TODO: Fazer o método de comparação para o HLA do receptor e doador
+    	return false;
+     }
 }

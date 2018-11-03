@@ -3,12 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication1;
+package tccAlgorithm;
 
 /**
  *
  * @author samuellucas97
  */
-public class CompatibilidadeHLA {
-    
+public enum TiposDeSangue {
+    A_positivo,
+    A_negativo,
+    B_positivo, 
+    B_negativo,
+    O_positivo, 
+    O_negativo,
+    AB_positivo, 
+    AB_negativo;
 }
