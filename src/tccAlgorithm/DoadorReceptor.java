@@ -3,11 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tccAlgorithm;
+package tccalgorithm;
+import tccalgorithm.TiposDeSangue;
+import tccalgorithm.Preferencia;
 import java.util.ArrayList;
 /**
- *
+ * Representa um par doador-receptor
  * @author samuellucas97
+ *          candinho
  */
 public class DoadorReceptor {
     
@@ -15,14 +18,20 @@ public class DoadorReceptor {
     private String nomeDoador;
     private TiposDeSangue tipoDeSangueReceptor;
     private TiposDeSangue tipoDeSangueDoador;
-    private ArrayList<String> listaHLADoador;
-    private ArrayList<String> listaHLAReceptor;
-    private ArrayList<String> listaDePreferencias;
-
+    private String listaHLADoador;
+    private String listaHLAReceptor;
+    private ArrayList<Preferencia> listaDePreferencias;
+    /**
+     * Construtor parametrizado
+     * @param nomeReceptor Nome do receptor
+     * @param nomeDoador    Nome do doador
+     * @param tipoDeSangueReceptor  Tipo de sangue do receptor
+     * @param tipoDeSangueDoador    Tipo de sangue do doador
+     */
     public DoadorReceptor(String nomeReceptor, String nomeDoador, TiposDeSangue tipoDeSangueReceptor, TiposDeSangue tipoDeSangueDoador) {
-        this.listaHLADoador = new ArrayList<String>();
-        this.listaHLAReceptor = new ArrayList<String>();
-        this.listaDePreferencias = new ArrayList<String>();
+        this.listaHLADoador = new String();
+        this.listaHLAReceptor = new String();
+        this.listaDePreferencias = new ArrayList<Preferencia>();
         
         this.nomeReceptor = nomeReceptor;
         this.nomeDoador = nomeDoador;
@@ -62,23 +71,23 @@ public class DoadorReceptor {
         this.tipoDeSangueDoador = tipoDeSangueDoador;
     }
 
-    public ArrayList<String> getListaHLADoador() {
+    public String getListaHLADoador() {
         return listaHLADoador;
     }
 
-    public void setListaHLADoador(ArrayList<String> listaHLADoador) {
+    public void setListaHLADoador(String listaHLADoador) {
         this.listaHLADoador = listaHLADoador;
     }
 
-    public ArrayList<String> getListaHLAReceptor() {
+    public String getListaHLAReceptor() {
         return listaHLAReceptor;
     }
 
-    public void setListaHLAReceptor(ArrayList<String> listaHLAReceptor) {
+    public void setListaHLAReceptor( String listaHLAReceptor) {
         this.listaHLAReceptor = listaHLAReceptor;
     }
     
-    public ArrayList<String> listaDePreferencias(){
+    public ArrayList<Preferencia> getListaDePreferencias(){
         return listaDePreferencias;
     }
     
