@@ -1,5 +1,5 @@
 # TTCalgorithm
-Implementação em Java do algoritmo _Top Trade Cycles Chains_ (*TTC Chains*) voltado para o problema de emparelhamento cruzado referente ao 3º trabalho da disciplina de ***Grafos***.
+Implementação em Java do algoritmo _Top Trade Cycles Chains_ (**TTC Chains**) voltado para o problema de emparelhamento cruzado referente ao 3º trabalho da disciplina de ***Grafos***.
 
 ## Caso de teste
 
@@ -10,7 +10,7 @@ ENTRADA:
 - Conjunto de doador-receptor
 	(CLASSE DOADOR-RECEPTOR)
 - Preferencias de cada doador-receptor que depende:
-	tipos de sangue(*A+/-*, *B+/-*, *O+/-*, *AB+/-*) 
+	tipos de sangue(**A+/-**, **B+/-**, **O+/-**, **AB+/-**) 
 	grupos de HLA (A, B, DR)
 
 Sequência para definir as preferências:
@@ -47,6 +47,6 @@ ou permanece no procedimento.
 :link: <https://ac.els-cdn.com/S0022053105001663/1-s2.0-S0022053105001663-main.pdf?_tid=8de9b541-fef8-4554-abec-b5f9983dab50&acdnat=1541526377_77d3340b013da29fcaaef0ebed7569ae>
 ## Autores :smiley:
 Candinho  
-Samuel
+Samuel Lucas de Moura Ferino <samuel1797@gmail.com>
 
 
