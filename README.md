@@ -1,4 +1,4 @@
-# TCCalgorithm
+# TTCalgorithm
 Implementação em Java do algoritmo _Top Trade Cycles Chains_ (*TTC Chains*) voltado para o problema de emparelhamento cruzado referente ao 3º trabalho da disciplina de ***Grafos***.
 
 ## Caso de teste
