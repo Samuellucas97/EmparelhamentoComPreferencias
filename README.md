@@ -2,7 +2,7 @@
 Implementação em Java do algoritmo _Top Trade Cycles Chains_ (**TTC Chains**) voltado para o problema de emparelhamento cruzado referente ao 3º trabalho da disciplina de ***Grafos***.
 
 <p align="right">
-<img src="http://www.lostdesign.net/glossario/java.jpg" width="14%"  />
+<img src="http://www.lostdesign.net/glossario/java.jpg" width="9%"  />
 </p>
 ## Caso de teste
 
