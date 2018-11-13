@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tccalgorithm;
+package tccAlgorithm;
 
 /**
  * Representa uma preferência
@@ -13,24 +13,24 @@ package tccalgorithm;
  */
 public class Preferencia implements Comparable<Preferencia>{
 
-    private String nome;
+    private DoadorReceptor doador;
     private int porcentagem;
     /**
      * 
-     * @param nome          Nome do doador
+     * @param doador        Nome do doador
      * @param porcentagem   Porcentagem de compatibilidade entre o doador e o receptor
      */
-    public Preferencia( String nome, int porcentagem){
-        this.nome = nome;
+    public Preferencia(DoadorReceptor doador, int porcentagem){
+        this.doador = doador;
         this.porcentagem = porcentagem;
     }
     
-    public String getNome() {
-        return nome;
+    public DoadorReceptor getDoador() {
+        return doador;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setDoador(DoadorReceptor doador) {
+        this.doador = doador;
     }
 
     public int getPorcentagem() {
@@ -48,7 +48,6 @@ public class Preferencia implements Comparable<Preferencia>{
      *          1 caso contrário
      */
     public int compareTo( Preferencia p){
-    
         if( this.porcentagem < p.getPorcentagem() ){
           return -1;
         }

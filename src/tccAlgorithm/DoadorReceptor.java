@@ -3,22 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tccalgorithm;
-import tccalgorithm.TiposDeSangue;
-import tccalgorithm.Preferencia;
+package tccAlgorithm;
 import java.util.ArrayList;
 /**
  * Representa um par doador-receptor
  * @author samuellucas97
  *          candinho
  */
-public class DoadorReceptor {
+public class DoadorReceptor extends Doador{
     
     private String nomeReceptor;
-    private String nomeDoador;
     private TiposDeSangue tipoDeSangueReceptor;
-    private TiposDeSangue tipoDeSangueDoador;
-    private String listaHLADoador;
     private String listaHLAReceptor;
     private ArrayList<Preferencia> listaDePreferencias;
     /**
@@ -28,15 +23,17 @@ public class DoadorReceptor {
      * @param tipoDeSangueReceptor  Tipo de sangue do receptor
      * @param tipoDeSangueDoador    Tipo de sangue do doador
      */
-    public DoadorReceptor(String nomeReceptor, String nomeDoador, TiposDeSangue tipoDeSangueReceptor, TiposDeSangue tipoDeSangueDoador) {
-        this.listaHLADoador = new String();
+    public DoadorReceptor(String nomeReceptor, String nomeDoador, TiposDeSangue tipoDeSangueReceptor,
+            TiposDeSangue tipoDeSangueDoador) {
+        super(nomeDoador, tipoDeSangueDoador, new String());
         this.listaHLAReceptor = new String();
         this.listaDePreferencias = new ArrayList<Preferencia>();
-        
         this.nomeReceptor = nomeReceptor;
-        this.nomeDoador = nomeDoador;
         this.tipoDeSangueReceptor = tipoDeSangueReceptor;
-        this.tipoDeSangueDoador = tipoDeSangueDoador;
+    }
+    
+    public DoadorReceptor() {
+        
     }
     
     public String getNomeReceptor() {
@@ -47,36 +44,12 @@ public class DoadorReceptor {
         this.nomeReceptor = nomeReceptor;
     }
 
-    public String getNomeDoador() {
-        return nomeDoador;
-    }
-
-    public void setNomeDoador(String nomeDoador) {
-        this.nomeDoador = nomeDoador;
-    }
-
     public TiposDeSangue getTipoDeSangueReceptor() {
         return tipoDeSangueReceptor;
     }
 
     public void setTipoDeSangueReceptor(TiposDeSangue tipoDeSangueReceptor) {
         this.tipoDeSangueReceptor = tipoDeSangueReceptor;
-    }
-
-    public TiposDeSangue getTipoDeSangueDoador() {
-        return tipoDeSangueDoador;
-    }
-
-    public void setTipoDeSangueDoador(TiposDeSangue tipoDeSangueDoador) {
-        this.tipoDeSangueDoador = tipoDeSangueDoador;
-    }
-
-    public String getListaHLADoador() {
-        return listaHLADoador;
-    }
-
-    public void setListaHLADoador(String listaHLADoador) {
-        this.listaHLADoador = listaHLADoador;
     }
 
     public String getListaHLAReceptor() {
@@ -89,6 +62,19 @@ public class DoadorReceptor {
     
     public ArrayList<Preferencia> getListaDePreferencias(){
         return listaDePreferencias;
+    }
+    /**
+     * 
+     * @return maisPreferido
+     * Retira da lista de preferências o mais preferido, após retornar o mesmo
+     */
+    public DoadorReceptor getMaisPreferido() {
+        if(!listaDePreferencias.isEmpty()) {
+            DoadorReceptor doador = listaDePreferencias.get(0).getDoador();
+            listaDePreferencias.remove(0);
+            return doador;
+        }
+        return null;
     }
     
 }

@@ -1,4 +1,4 @@
-package tccalgorithm;
+package tccAlgorithm;
 
 import java.util.ArrayList;
 

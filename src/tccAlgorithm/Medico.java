@@ -1,8 +1,5 @@
 package tccAlgorithm;
 
-import tccalgorithm.DoadorReceptor;
-import tccalgorithm.Controlador;
-import tccalgorithm.Preferencia;
 import java.util.ArrayList;
 import java.util.Collections;
 /**
@@ -35,7 +32,7 @@ public class Medico {
                     int taxaDeCompatibilidade = owner.compatibilidadeHLA(doador, receptor);
                     
                     if (taxaDeCompatibilidade > 70) { 
-                        receptor.getListaDePreferencias().add(new Preferencia(doador.getNomeDoador(), taxaDeCompatibilidade)); 
+                        receptor.getListaDePreferencias().add(new Preferencia(doador, taxaDeCompatibilidade)); 
                    }
                 }
             }
