@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tccAlgorithm;
+
 
 import java.util.ArrayList;
 
@@ -64,14 +64,14 @@ public class Grafo {
         int j = 0;
         boolean encontrado = false;
         // Passo 1: Cada paciente aponta para o melhor rim (vindo de um DoadorReceptor ou de um rimCadaver)
-        for(int i = 0; i < this.numParesDoadorReceptor; i++) {
+        for(int i = 0; i < this.lista.size(); i++) {
             j = 0;
             encontrado = false;
             // Enquanto o mais preferido doador do paciente não for encontrado, ou j < tamanho do array ele continua
-            while (encontrado || j < this.numParesDoadorReceptor) {
+            while (encontrado || j < this.numParesDoadorReceptor || j < lista.get(i).size() ) {
                 // Percorre o vetor do paciente a procura do doador mais preferido, e caso ele encontre, ele seta o ponteiro na matriz
-                if (this.posicaoDoadorReceptor[i].getMaisPreferido().getNomeDoador().equals(this.posicaoDoadorERinsCadaveres[i].getNomeDoador())) {
-                    this.lista.get(i).get(i); //Continue
+                if (this.posicaoDoadorReceptor[i].getMaisPreferido().getNomeDoador().equals( this.posicaoDoadorERinsCadaveres[i].getNomeDoador()) ) {
+                    this.lista.get(i).add(j); 
                     encontrado = true;
                 }
                 j++;
