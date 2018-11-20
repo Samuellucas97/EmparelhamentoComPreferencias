@@ -8,7 +8,7 @@ package tccAlgorithm;
 /**
  * Representa um doador ou um rimCadaver
  * @author  samuellucas97
- *          candinho
+ *          candinhojr
  * @since   13.11.2018
  */
 public class Doador {

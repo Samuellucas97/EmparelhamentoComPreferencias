@@ -6,8 +6,10 @@
 package tccAlgorithm;
 
 /**
- *
+ * Representa os tipos de sangue
  * @author samuellucas97
+ *         candinhojr
+ * @since   01.11.2018
  */
 public enum TiposDeSangue {
     A_positivo,

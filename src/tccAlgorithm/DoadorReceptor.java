@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Representa um par doador-receptor
  * @author samuellucas97
- *          candinho
+ *         candinhojr
  */
 public class DoadorReceptor extends Doador{
     

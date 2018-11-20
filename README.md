@@ -59,7 +59,7 @@ ou permanece no procedimento.
 :link: <https://ac.els-cdn.com/S0022053105001663/1-s2.0-S0022053105001663-main.pdf?_tid=8de9b541-fef8-4554-abec-b5f9983dab50&acdnat=1541526377_77d3340b013da29fcaaef0ebed7569ae>
 
 ## Autores :smiley:
-Candinho  
+Candinho Luiz Dalla Brida Junior (<candinholuiz@gmail.com>)  
 Samuel Lucas de Moura Ferino (<samuel1797@gmail.com>)  
 
 

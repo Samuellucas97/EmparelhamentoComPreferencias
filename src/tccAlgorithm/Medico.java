@@ -5,7 +5,7 @@ import java.util.Collections;
 /**
  * Representa um médico
  * @author  samuellucas97
- *          candinho
+ *          candinhojr
  * @since   01.11.2018
  */
 public class Medico {

@@ -8,7 +8,7 @@ package tccAlgorithm;
 /**
  * Representa uma preferência
  * @author  samuellucas97
- *          candinho
+ *          candinhojr
  * @since   06.11.2018
  */
 public class Preferencia implements Comparable<Preferencia>{

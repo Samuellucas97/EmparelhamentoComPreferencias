@@ -8,7 +8,7 @@ package tccAlgorithm;
 /**
  * Representa uma compatibilidade
  * @author samuellucas97
- *         candinho
+ *         candinhojr
  * @since   01.11.2018
  */
 public class Compatibilidade {

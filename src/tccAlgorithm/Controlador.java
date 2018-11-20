@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Representa uma preferência
  * @author  samuellucas97
- *          candinho
+ *          candinhojr
  * @since   03.11.2018
  */
 public class Controlador {
