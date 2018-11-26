@@ -13,9 +13,22 @@ public class Vertice {
 	 cada vértice poderá emergir dele apenas um arco - o que liga ao vértice contendo doador mais preferido atualmente
 	 */ 
 	
+	/**
+	 * Construtor padrão
+	 */
 	public Vertice() {
-		chave = new DoadorReceptor();
-		arcosEmergentes = new LinkedList<Arco>(); 
+		chave = new Doador();
+		arcoEmergente = new Arco(); 
+	}
+	
+	/**
+	 * Construtor parametrizado
+	 * @param	chave	Chave (id) do vértice
+	 * @param	arcoEmergente	Arco que emerge desse vértice
+	 */
+	public Vertice(Doador chave, Arco arcoEmergente){
+		this.chave = chave;
+		this.arcoEmergente = arcoEmergente;
 	}
 	
 	public Doador getChave() {
@@ -23,7 +36,7 @@ public class Vertice {
 	} 
 	
 	public Arco getArcoEmergente(){
-		return arcosEmergentes;
+		return arcoEmergente;
 	}
 	
 	@Override
