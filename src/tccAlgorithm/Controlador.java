@@ -13,8 +13,10 @@ public class Controlador {
      * @param receptor  Receptor
      * @param doadores  Lista de doadores
      */
-    public void defineListaDePreferenciasDoReceptor(DoadorReceptor receptor, ArrayList<Doador> doadores) {
-		Medico.defineListaDePreferenciasDoReceptor(receptor, doadores);
+    public void defineListaDePreferenciasDoReceptor(DoadorReceptor receptor, 
+                                            ArrayList<DoadorReceptor> doadoresVivos,
+                                            ArrayList<Doador> doadoresCadaveres) {
+		Medico.defineListaDePreferenciasDoReceptor(receptor, doadoresVivos, doadoresCadaveres);
 	}
 	/**
      * Verifica a compatibilidade sanguínea entre o receptor e o doador

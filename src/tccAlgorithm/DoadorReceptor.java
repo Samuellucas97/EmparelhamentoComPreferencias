@@ -77,7 +77,7 @@ public class DoadorReceptor extends Doador{
      */
     public Doador getMaisPreferido() throws NullPointerException{
         if(!listaDePreferencias.isEmpty()) {
-            DoadorReceptor doador = listaDePreferencias.get(0).getDoador();
+            Doador doador = listaDePreferencias.get(0).getDoador();
             listaDePreferencias.remove(0);
             return doador;
         }

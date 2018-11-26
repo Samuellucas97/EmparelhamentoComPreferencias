@@ -15,7 +15,7 @@ import java.util.LinkedList;
  */
 public class Grafo {
     
-	private ArrayList<Vertice> listaDeAdjacencia; 
+    private ArrayList<Vertice> listaDeAdjacencia; 
     
     private int numParesDoadorReceptor; /** Número de pares doadores-receptores */
     private int numRinsCadaveres; /** Número de rins de pacientes cadáveres */
@@ -52,6 +52,7 @@ public class Grafo {
      * Imprime os vértices do grafo 
      */
     public void imprimeGrafo() {
+        
         System.out.print(" ");
         for (int i = 0; i < this.numParesDoadorReceptor; i++) {
             System.out.print(i +  " " );
@@ -75,31 +76,31 @@ public class Grafo {
     
     public Grafo ttcChains() {
         
-    	int j = 0;
-        boolean encontrado = false;
+  //  	int j = 0;
+  //      boolean encontrado = false;
         
         
         
         /** Passo 1: 
          * Cada paciente aponta para o melhor rim (vindo de um DoadorReceptor ou de um rimCadaver) 
          */
-        for(int i = 0; i < this.listaDeAdjacencia.size(); i++) {
-            j = 0;
-            encontrado = false;
+    //    for(int i = 0; i < this.listaDeAdjacencia.size(); i++) {
+   //         j = 0;
+   //         encontrado = false;
             
             
             
             
             // Enquanto o mais preferido doador do paciente não for encontrado, ou j < tamanho do array ele continua
-            while (encontrado || j < this.numParesDoadorReceptor || j < lista.get(i).size() ) {
+    //        while (encontrado || j < this.numParesDoadorReceptor || j < lista.get(i).size() ) {
                 // Percorre o vetor do paciente a procura do doador mais preferido, e caso ele encontre, ele seta o ponteiro na matriz
-                if (this.posicaoDoadorReceptor[i].getMaisPreferido().getNomeDoador().equals( this.posicaoDoadorERinsCadaveres[i].getNomeDoador()) ) {
-                    this.lista.get(i).add( ); 
-                    encontrado = true;
-                }
-                j++;
-            }
-        }
+    //            if (this.posicaoDoadorReceptor[i].getMaisPreferido().getNomeDoador().equals( this.posicaoDoadorERinsCadaveres[i].getNomeDoador()) ) {
+     //               this.lista.get(i).add( ); 
+     //               encontrado = true;
+     //           }
+     //           j++;
+     //       }
+     //   }
         return new Grafo(numParesDoadorReceptor, numRinsCadaveres);
     }
 
