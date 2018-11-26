@@ -1,5 +1,3 @@
-import java.util.LinkedList;;
-
 /**
  * Representa um vértice do grafo
  * @author Samuel
@@ -7,8 +5,13 @@ import java.util.LinkedList;;
  */
 public class Vertice {
 	
-	private DoadorReceptor chave; /** Chave do vértice */
-	private LinkedList<Arco> arcosEmergentes; /** Lista de arcos que saem desse vértices */ 
+	private Doador chave; /** Chave do vértice */
+	
+	private Arco arcoEmergente; /** Arco que sae desse vértice.
+	 
+	 				Obs.: Não se usou uma lista de arcos pois, como se fará um emparelhamento,
+	 cada vértice poderá emergir dele apenas um arco - o que liga ao vértice contendo doador mais preferido atualmente
+	 */ 
 	
 	public Vertice() {
 		chave = new DoadorReceptor();
@@ -19,13 +22,13 @@ public class Vertice {
 		return chave;
 	} 
 	
-	public LinkedList<Arco> getListaDeAdjacencia(){
+	public Arco getArcoEmergente(){
 		return arcosEmergentes;
 	}
 	
 	@Override
 	public String toString() {
-		return "" + chave;
+		return "" + chave.toString();
 	}
 	
 }
