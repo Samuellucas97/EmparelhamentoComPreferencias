@@ -16,6 +16,21 @@ public class DoadorReceptor extends Doador{
     private TiposDeSangue tipoDeSangueReceptor;
     private String listaHLAReceptor;
     private ArrayList<Preferencia> listaDePreferencias;
+    
+    /**
+     * Construtor padrão
+     */
+    public DoadorReceptor() {
+
+        super();
+
+        this.nomeReceptor = new String();
+        this.tipoDeSangueReceptor = TiposDeSangue.O_negativo;
+        this.listaHLAReceptor = new String();
+        this.listaDePreferencias = new ArrayList<Preferencia>();
+        
+    }
+    
     /**
      * Construtor parametrizado
      * @param nomeReceptor Nome do receptor
@@ -23,16 +38,20 @@ public class DoadorReceptor extends Doador{
      * @param tipoDeSangueReceptor  Tipo de sangue do receptor
      * @param tipoDeSangueDoador    Tipo de sangue do doador
      */
-    public DoadorReceptor(String nomeReceptor, String nomeDoador, TiposDeSangue tipoDeSangueReceptor,
-            TiposDeSangue tipoDeSangueDoador) {
-        super(nomeDoador, tipoDeSangueDoador, new String());
-        this.listaHLAReceptor = new String();
-        this.listaDePreferencias = new ArrayList<Preferencia>();
+    public DoadorReceptor( 
+                            String nomeDoador,
+                            TiposDeSangue tipoDeSangueDoador,
+                            String listaHLADoador,
+                            String nomeReceptor, 
+                            TiposDeSangue tipoDeSangueReceptor,
+                            String listaHLAReceptor) {
+        
+        super( nomeDoador, false,tipoDeSangueDoador, listaHLADoador );
+        
         this.nomeReceptor = nomeReceptor;
         this.tipoDeSangueReceptor = tipoDeSangueReceptor;
-    }
-    
-    public DoadorReceptor() {
+        this.listaHLAReceptor = listaHLAReceptor;
+        this.listaDePreferencias = new ArrayList<Preferencia>();
         
     }
     
@@ -40,35 +59,22 @@ public class DoadorReceptor extends Doador{
         return nomeReceptor;
     }
 
-    public void setNomeReceptor(String nomeReceptor) {
-        this.nomeReceptor = nomeReceptor;
-    }
-
     public TiposDeSangue getTipoDeSangueReceptor() {
         return tipoDeSangueReceptor;
     }
 
-    public void setTipoDeSangueReceptor(TiposDeSangue tipoDeSangueReceptor) {
-        this.tipoDeSangueReceptor = tipoDeSangueReceptor;
-    }
-
     public String getListaHLAReceptor() {
         return listaHLAReceptor;
-    }
-
-    public void setListaHLAReceptor( String listaHLAReceptor) {
-        this.listaHLAReceptor = listaHLAReceptor;
     }
     
     public ArrayList<Preferencia> getListaDePreferencias(){
         return listaDePreferencias;
     }
     /**
-     * 
+     * Envia da o doador mais preferido qusca na lista Retira da lista de preferências o mais preferido, após retornar o mesmo
      * @return maisPreferido
-     * Retira da lista de preferências o mais preferido, após retornar o mesmo
      */
-    public DoadorReceptor getMaisPreferido() {
+    public DoadorReceptor getMaisPreferido() throws NullPointerException{
         if(!listaDePreferencias.isEmpty()) {
             DoadorReceptor doador = listaDePreferencias.get(0).getDoador();
             listaDePreferencias.remove(0);
@@ -76,5 +82,9 @@ public class DoadorReceptor extends Doador{
         }
         return null;
     }
-    
+
+    @Override
+    public String toString(){
+        return super.toString() + " " + nomeReceptor + " " + tipoDeSangueReceptor + " " + listaHLAReceptor;
+    }    
 }
