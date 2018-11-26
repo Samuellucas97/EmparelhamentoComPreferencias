@@ -12,33 +12,26 @@
  */
 public class Preferencia implements Comparable<Preferencia>{
 
-    private DoadorReceptor doador;
+    private Doador doador;
     private int porcentagem;
     /**
      * 
      * @param doador        Nome do doador
      * @param porcentagem   Porcentagem de compatibilidade entre o doador e o receptor
      */
-    public Preferencia(DoadorReceptor doador, int porcentagem){
+    public Preferencia(Doador doador, int porcentagem){
         this.doador = doador;
         this.porcentagem = porcentagem;
     }
     
-    public DoadorReceptor getDoador() {
+    public Doador getDoador() {
         return doador;
-    }
-
-    public void setDoador(DoadorReceptor doador) {
-        this.doador = doador;
     }
 
     public int getPorcentagem() {
         return porcentagem;
     }
 
-    public void setPorcentagem(int porcentagem) {
-        this.porcentagem = porcentagem;
-    }
     /**
      * Define a lei de comparação
      * @param   p   Preferência a ser comparada
