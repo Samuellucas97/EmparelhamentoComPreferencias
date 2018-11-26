@@ -6,25 +6,23 @@ import java.util.Collections;
  * @author  samuellucas97
  *          candinhojr
  * @since   01.11.2018
+ * @see     DoadorReceptor
  */
 public class Medico {
-
-	Controlador owner;
+	    
+	/**
+     * Construtor parametrizado
+     * @param owner 
+     */
+	public Medico() { }
         
 	/**
-         * Construtor parametrizado
-         * @param owner 
-         */
-	public Medico(Controlador owner) {
-		this.owner = owner;
-	}
-        
-	/**
-         * Cria e ordena a lista de preferências do receptor
-         * @param receptor  Receptor a receber o rim doado 
-         * @param doadores  Doador de um rim
-         */
-	public void defineListaDePreferenciasDoReceptor(DoadorReceptor receptor, ArrayList<DoadorReceptor> doadores) {
+     * Cria e ordena a lista de preferências do receptor
+     * @param receptor  Receptor a receber o rim doado 
+     * @param doadores  Doador de um rim
+     */
+	public static void defineListaDePreferenciasDoReceptor(DoadorReceptor receptor, ArrayList<DoadorReceptor> doadoresVivos,
+    ArrayList<Doador> doadoresCadaveres ) {
             
             for (DoadorReceptor doador : doadores) {  /// Verificando compatibilidade entre as candidatas  
                 if (owner.compatibilidadeSanguinea(doador, receptor)) {
