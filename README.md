@@ -1,4 +1,5 @@
-# Algoritmo TTC Chains 
+# Algoritmo TTC Chains
+## Introdução
 Implementação em Java do algoritmo _Top Trade Cycles Chains_ (**TTC Chains**) voltado para o problema de emparelhamento cruzado referente ao 3º trabalho da disciplina de ***Grafos***.
 
 <p align="right">
@@ -27,7 +28,7 @@ imediata;
 4.Verifica-se a compatibilidade (HLA), semelhança entre
 o receptor e o doador;
 
-## Algoritmo Top trade Cycles Chains
+## Descrição do Algoritmo
 Agora estamos prontos para descrever o mecanismo do TTCC em sua forma geral. Considerando a preferências dos agentes, o mecanismo do TTCC encontra o resultado do problema de correspondência 
 através do seguinte procedimento:
 1. Em cada rodada do algoritmo TTCC:
