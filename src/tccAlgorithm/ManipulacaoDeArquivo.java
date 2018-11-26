@@ -9,6 +9,9 @@ import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/// VETOR IMPLEMENTADO COMO LISTA
+import java.util.ArrayList;
+
 /**
  * Contêm os métodos de leitura e escrita de arquivo
  * @author  Samuel Lucas de Moura Ferino
@@ -88,5 +91,62 @@ public class ManipulacaoDeArquivo{
         }
     }
 
+    /**
+     * Promove a leitura com tratamento do arquivo contendo os dados dos pares doador-receptor
+     * @param   nomeDoArquivoDeDoadoresReceptores   Nome do arquivo a ser lido
+     * @return  Um vetor de pares doador-receptor
+     */
+    public static ArrayList<DoadorReceptor> leituraComTratamentoDeArquivoDeDoadoresReceptores( String nomeDoArquivoDeDoadoresReceptores) throws NullPointerException{
+        
+        String conteudoArquivoDeDoadoresReceptoresEmString = lerArquivo(nomeDoArquivoDeDoadoresReceptores);
+
+        if( conteudoArquivoDeDoadoresReceptoresEmString.equals("") ){
+            return null;
+        }
+
+        String[] dadosDeParesDoadorReceptor = conteudoArquivoDeDoadoresReceptoresEmString.split(";") ;
+        ArrayList<DoadorReceptor> paresDoadorReceptor = new ArrayList<DoadorReceptor>();
+
+        for(int i = 0; i < dadosDeParesDoadorReceptor.length; i+=6){
+            paresDoadorReceptor.add( new DoadorReceptor(
+                            dadosDeParesDoadorReceptor[i],
+                            TiposDeSangue.valueOf(dadosDeParesDoadorReceptor[i+1]),
+                            dadosDeParesDoadorReceptor[i+2],
+                            dadosDeParesDoadorReceptor[i+3], 
+                            TiposDeSangue.valueOf(dadosDeParesDoadorReceptor[i+4]),
+                            dadosDeParesDoadorReceptor[i+5] ) 
+                                    );
+        }
+
+        return paresDoadorReceptor;
+    }
+
+    /**
+     * Promove a leitura com tratamento do arquivo contendo os dados dos doadores cadáver
+     * @param   nomeDoArquivoDeDoadoresCadaver   Nome do arquivo a ser lido
+     * @return  Um vetor de doadores cadáver
+     */
+    public static ArrayList<Doador> leituraComTratamentoDeArquivoDeDoadoresCadaver( String nomeDoArquivoDeDoadoresCadaver) throws NullPointerException{
+        
+        String conteudoArquivoDeDoadoresCadaverEmString = lerArquivo(nomeDoArquivoDeDoadoresCadaver);
+
+        if( conteudoArquivoDeDoadoresCadaverEmString.equals("") ){
+            return null;
+        }
+        
+        String[] dadosDeDoadorCadaver = conteudoArquivoDeDoadoresCadaverEmString.split(";");
+        ArrayList<Doador> doadoresCadaver = new ArrayList<Doador>();
+
+        for(int i = 0; i < dadosDeDoadorCadaver.length; i+=3){
+            doadoresCadaver.add( new Doador(
+                            dadosDeDoadorCadaver[i],
+                            TiposDeSangue.valueOf(dadosDeDoadorCadaver[i+1]),
+                            dadosDeDoadorCadaver[i+2] ) 
+                                );
+        }
+
+        return doadoresCadaver;
+
+    }
 
 }
