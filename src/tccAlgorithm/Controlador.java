@@ -22,12 +22,12 @@ public class Controlador {
      * @param receptor  Receptor
      * @return True caso seja compatível senão false
      */
-	public boolean compatibilidadeSanguinea(DoadorReceptor doador, Doador receptor){	
+	public boolean compatibilidadeSanguinea(Doador doador, DoadorReceptor receptor){	
 		return Compatibilidade.compatibilidadeSanguinea(doador, receptor);
 	}
 
 
-	/**
+   /**
      * Verifiaca a compatibilidade de HLA entre o doador e o receptor
      * @param doador    Doador
      * @param receptor  Receptor
