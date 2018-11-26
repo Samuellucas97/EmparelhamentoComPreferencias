@@ -71,10 +71,11 @@ public class DoadorReceptor extends Doador{
         return listaDePreferencias;
     }
     /**
-     * Envia da o doador mais preferido qusca na lista Retira da lista de preferências o mais preferido, após retornar o mesmo
-     * @return maisPreferido
+     * Envia da o doador mais preferido qusca na lista Retira da lista de preferências o 
+     * mais preferido, após retornar o mesmo
+     * @return O doador mais Preferido
      */
-    public DoadorReceptor getMaisPreferido() throws NullPointerException{
+    public Doador getMaisPreferido() throws NullPointerException{
         if(!listaDePreferencias.isEmpty()) {
             DoadorReceptor doador = listaDePreferencias.get(0).getDoador();
             listaDePreferencias.remove(0);
