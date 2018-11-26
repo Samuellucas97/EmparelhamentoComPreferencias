@@ -13,20 +13,34 @@ public class Controlador {
      * @param receptor  Receptor
      * @param doadores  Lista de doadores
      */
-    public void defineListaDePreferenciasDoReceptor(DoadorReceptor receptor, 
-                                            ArrayList<DoadorReceptor> doadoresVivos,
-                                            ArrayList<Doador> doadoresCadaveres) {
-		Medico.defineListaDePreferenciasDoReceptor(receptor, doadoresVivos, doadoresCadaveres);
-	}
-	/**
+    public void defineListaDePreferenciasDoReceptor(String nomeDoArquivoDeDoadoresReceptores,
+                                                    String nomeDoArquivoDeDoadoresCadaveres) {
+        
+        ArrayList<DoadorReceptor> paresDoadoresReceptores = ManipulacaoDeArquivo.leituraComTratamentoDeArquivoDeDoadoresReceptores("./src/doadoresReceptores.dat");
+        ArrayList<Doador> doadoresCadaveres = ManipulacaoDeArquivo.leituraComTratamentoDeArquivoDeDoadoresCadaver("./src/doadoresCadaver.dat");
+        
+        ArrayList<DoadorReceptor> paresDoadoresReceptoresAuxiliar = paresDoadoresReceptores;
+        ArrayList<Doador> doadoresCadaveresAuxiliar = doadoresCadaveres;
+        
+        for( int i = 0; i < paresDoadoresReceptores.size(); ++i ){
+            
+            paresDoadoresReceptoresAuxiliar = paresDoadoresReceptores;
+            doadoresCadaveresAuxiliar = doadoresCadaveres;
+            
+            //if(){            
+                Medico.defineListaDePreferenciasDoReceptor( paresDoadoresReceptores.get(i), paresDoadoresReceptoresAuxiliar, doadoresCadaveresAuxiliar);
+            //}    
+        }    
+    }
+    /**
      * Verifica a compatibilidade sanguínea entre o receptor e o doador
      * @param doador    Doador
      * @param receptor  Receptor
      * @return True caso seja compatível senão false
      */
-	public boolean compatibilidadeSanguinea(Doador doador, DoadorReceptor receptor){	
-		return Compatibilidade.compatibilidadeSanguinea(doador, receptor);
-	}
+    public boolean compatibilidadeSanguinea(Doador doador, DoadorReceptor receptor){	
+            return Compatibilidade.compatibilidadeSanguinea(doador, receptor);
+    }
 
 
    /**
@@ -35,12 +49,8 @@ public class Controlador {
      * @param receptor  Receptor
      * @return True caso sejam compatíveis senão false
      */
-	public int compatibilidadeHLA(Doador doador, DoadorReceptor receptor) {
-		return Compatibilidade.compatibilidadeHLA(doador, receptor);
-	}
-	
-	public static void main(String[] args) {
-            //TODO
-		
-	}
+    public int compatibilidadeHLA(Doador doador, DoadorReceptor receptor) {
+            return Compatibilidade.compatibilidadeHLA(doador, receptor);
+    }
+
 }

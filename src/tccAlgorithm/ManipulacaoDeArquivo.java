@@ -149,4 +149,19 @@ public class ManipulacaoDeArquivo{
 
     }
 
+    public static void main(String[] args) {
+
+        //// TESTANDO LEITURA DE ARQUIVO
+
+        System.out.println( ManipulacaoDeArquivo.lerArquivo("./src/doadoresReceptores.dat") + "AO");    
+
+        ArrayList<DoadorReceptor> a = ManipulacaoDeArquivo.leituraComTratamentoDeArquivoDeDoadoresReceptores("./src/doadoresReceptores.dat");
+        System.out.println(a);    
+
+
+        ArrayList<Doador> b = ManipulacaoDeArquivo.leituraComTratamentoDeArquivoDeDoadoresCadaver("./src/doadoresCadaver.dat");
+        System.out.println(b);    
+
+    }
+    
 }

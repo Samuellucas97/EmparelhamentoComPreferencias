@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 
-
 import java.util.ArrayList;
-import java.util.LinkedList;
+
 /**
  * Representa um grafo
  * @author  samuellucas97
@@ -29,7 +28,7 @@ public class Grafo {
      * @param numRinsCadaveres Número de rins cadaveres
      */
     public Grafo(int numParesDoadorReceptor, int numRinsCadaveres) {
-    
+                 /// String nome dos arquivo contendo os dados dos doadores cadáver e dos doadores vivos   
     	// Refatorar: Adicionar leitura de arquivo
         int tamanho = numParesDoadorReceptor + numRinsCadaveres;
         

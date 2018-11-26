@@ -7,7 +7,7 @@ public class BuscaEmProfundidade {
 	private static byte preto = 2;
 	
 	private int tempoDeDescoberta[];
-	private int tempoDeTermino[]; //! Tempo de término do exame da lista de adjacência 
+	private int tempoDeTermino[]; //! Tempo de tï¿½rmino do exame da lista de adjacï¿½ncia 
 	private int antecessor[];
 	
 	private Grafo grafo;
