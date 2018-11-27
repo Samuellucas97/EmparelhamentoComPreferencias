@@ -1,3 +1,5 @@
+package tccAlgorithm;
+
 /**
  * Representa um arco no grafo
  * @author	Samuel
@@ -7,13 +9,10 @@
 public class Arco {
 	private Vertice verticeDoInicio;
 	private Vertice verticeDoFim;
-
 	
 	public Arco( ) {
-		
 		verticeDoInicio = new Vertice();
 		verticeDoFim = new Vertice();
-		
 	}
 	
 	public Arco( Vertice verticeDoInicio, Vertice verticeDoFim ) {

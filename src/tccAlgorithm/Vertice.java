@@ -1,3 +1,5 @@
+package tccAlgorithm;
+
 /**
  * Representa um vértice do grafo
  * @author Samuel
@@ -23,11 +25,10 @@ public class Vertice {
 	/**
 	 * Construtor parametrizado
 	 * @param	chave	Chave (id) do vértice
-	 * @param	arcoEmergente	Arco que emerge desse vértice
 	 */
-	public Vertice(Doador chave, Arco arcoEmergente){
+	public Vertice(Doador chave){
 		this.chave = chave;
-		this.arcoEmergente = arcoEmergente;
+		this.arcoEmergente = new Arco();
 	}
 	
 	public Doador getChave() {
@@ -37,6 +38,10 @@ public class Vertice {
 	public Arco getArcoEmergente(){
 		return arcoEmergente;
 	}
+        
+        public void setArcoEmergente(Arco arcoEmergente) {
+            this.arcoEmergente = arcoEmergente;
+        }
 	
 	@Override
 	public String toString() {

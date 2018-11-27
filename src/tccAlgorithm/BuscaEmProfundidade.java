@@ -1,3 +1,5 @@
+package tccAlgorithm;
+
 
 public class BuscaEmProfundidade {
 	

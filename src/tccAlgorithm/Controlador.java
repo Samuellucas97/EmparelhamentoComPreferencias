@@ -1,3 +1,5 @@
+package tccAlgorithm;
+
 import java.util.ArrayList;
 
 /**
@@ -7,18 +9,21 @@ import java.util.ArrayList;
  * @since   03.11.2018
  */
 public class Controlador {
-	
+    
+    private ArrayList<DoadorReceptor> paresDoadoresReceptores;
+    private ArrayList<Doador> doadoresCadaveres;
+
+    public Controlador() {
+        this.paresDoadoresReceptores = ManipulacaoDeArquivo.leituraComTratamentoDeArquivoDeDoadoresReceptores("./src/doadoresReceptores.dat");;
+        this.doadoresCadaveres = ManipulacaoDeArquivo.leituraComTratamentoDeArquivoDeDoadoresCadaver("./src/doadoresCadaver.dat");
+    }
+
     /**
      * Cria a lista de preferências do receptor
      * @param receptor  Receptor
      * @param doadores  Lista de doadores
      */
-    public void defineListaDePreferenciasDoReceptor(String nomeDoArquivoDeDoadoresReceptores,
-                                                    String nomeDoArquivoDeDoadoresCadaveres) {
-        
-        ArrayList<DoadorReceptor> paresDoadoresReceptores = ManipulacaoDeArquivo.leituraComTratamentoDeArquivoDeDoadoresReceptores("./src/doadoresReceptores.dat");
-        ArrayList<Doador> doadoresCadaveres = ManipulacaoDeArquivo.leituraComTratamentoDeArquivoDeDoadoresCadaver("./src/doadoresCadaver.dat");
-        
+    public void defineListaDePreferenciasDoReceptor() {     
         ArrayList<DoadorReceptor> paresDoadoresReceptoresAuxiliar = paresDoadoresReceptores;
         ArrayList<Doador> doadoresCadaveresAuxiliar = doadoresCadaveres;
         
@@ -32,25 +37,12 @@ public class Controlador {
             //}    
         }    
     }
-    /**
-     * Verifica a compatibilidade sanguínea entre o receptor e o doador
-     * @param doador    Doador
-     * @param receptor  Receptor
-     * @return True caso seja compatível senão false
-     */
-    public boolean compatibilidadeSanguinea(Doador doador, DoadorReceptor receptor){	
-            return Compatibilidade.compatibilidadeSanguinea(doador, receptor);
+    
+    public ArrayList<DoadorReceptor> getParesDoadoresReceptores() {
+        return paresDoadoresReceptores;
     }
 
-
-   /**
-     * Verifiaca a compatibilidade de HLA entre o doador e o receptor
-     * @param doador    Doador
-     * @param receptor  Receptor
-     * @return True caso sejam compatíveis senão false
-     */
-    public int compatibilidadeHLA(Doador doador, DoadorReceptor receptor) {
-            return Compatibilidade.compatibilidadeHLA(doador, receptor);
+    public ArrayList<Doador> getDoadoresCadaveres() {
+        return doadoresCadaveres;
     }
-
 }

@@ -1,3 +1,5 @@
+package tccAlgorithm;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,33 +17,39 @@ import java.util.ArrayList;
 public class Grafo {
     
     private ArrayList<Vertice> listaDeAdjacencia; 
-    
-    private int numParesDoadorReceptor; /** Número de pares doadores-receptores */
-    private int numRinsCadaveres; /** Número de rins de pacientes cadáveres */
+    private Controlador owner;
+    private int numParesDoadorReceptor;
     
     //private Doador posicaoDoadorERinsCadaveres[];
     //private DoadorReceptor posicaoDoadorReceptor[]; 
     
-    /**
-     * Construtor parametrizado
-     * @param numParesDoadorReceptor Número de pares doador-receptor
-     * @param numRinsCadaveres Número de rins cadaveres
-     */
-    public Grafo(int numParesDoadorReceptor, int numRinsCadaveres) {
-                 /// String nome dos arquivo contendo os dados dos doadores cadáver e dos doadores vivos   
+    public Grafo() {
+        /// String nome dos arquivo contendo os dados dos doadores cadáver e dos doadores vivos   
     	// Refatorar: Adicionar leitura de arquivo
-        int tamanho = numParesDoadorReceptor + numRinsCadaveres;
+//        int tamanho = numParesDoadorReceptor + numRinsCadaveres;
+        owner = new Controlador();
+        ArrayList<DoadorReceptor> paresDoadoresReceptores = owner.getParesDoadoresReceptores();      
+        ArrayList<Doador> doadoresCadaveres = owner.getDoadoresCadaveres();
+        
+        numParesDoadorReceptor = paresDoadoresReceptores.size();
+        
+        owner.defineListaDePreferenciasDoReceptor();
+        
+        int tamanho = paresDoadoresReceptores.size() + doadoresCadaveres.size();
         
         listaDeAdjacencia = new ArrayList<Vertice>();
-        this.numParesDoadorReceptor = numParesDoadorReceptor;
-        this.numRinsCadaveres = numRinsCadaveres;
         
         //this.lista = new ArrayList<LinkedList<DoadorReceptor>>( );
         //this.posicaoDoadorERinsCadaveres = new Doador[tamanho];
         //this.posicaoDoadorReceptor = new DoadorReceptor[numParesDoadorReceptor];
         
         for(int i = 0; i < tamanho; i++) {
-        	listaDeAdjacencia.add(new Vertice() );
+            // TODO: Terminar o add na lista de adjacencia e setArcoEmergente em vertice
+            Vertice vertice = new Vertice(paresDoadoresReceptores.get(i));
+            vertice.setArcoEmergente(new Arco(vertice, vertice));
+            
+            listaDeAdjacencia.add(vertice);
+                
        //     this.posicaoDoadorERinsCadaveres[i] = new Doador();
        //   this.posicaoDoadorReceptor[i] = new DoadorReceptor();
         }
@@ -73,7 +81,7 @@ public class Grafo {
         return this.numParesDoadorReceptor;
     }
     
-    public Grafo ttcChains() {
+//    public Grafo ttcChains() {
         
   //  	int j = 0;
   //      boolean encontrado = false;
@@ -100,7 +108,7 @@ public class Grafo {
      //           j++;
      //       }
      //   }
-        return new Grafo(numParesDoadorReceptor, numRinsCadaveres);
-    }
+//        return new Grafo(numParesDoadorReceptor, numRinsCadaveres);
+//    }
 
 }

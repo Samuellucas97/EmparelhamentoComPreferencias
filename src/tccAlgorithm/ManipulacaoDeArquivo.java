@@ -1,3 +1,5 @@
+package tccAlgorithm;
+
 //// IMPORTAÇÕES DE PACOTES
 
 /// (MANIPULAÇÃO DE ARQUIVO)
