@@ -102,12 +102,12 @@ public class Compatibilidade {
     public static int compatibilidadeHLA(Doador doador, DoadorReceptor receptor) {
             
         int quantidadeProteinasIguais = 0;
-        
-        for(  int i = 0; i < doador.getListaHLADoador().length(); ++i){
-            if ( doador.getListaHLADoador().charAt(i) == receptor.getListaHLAReceptor().charAt(i) ){
-                quantidadeProteinasIguais+=10;
-            }
-        }        
+        System.out.println("TAMANHO: " +doador.getListaHLADoador().length());
+//        for(  int i = 0; i < doador.getListaHLADoador().length(); i++){
+////            if ( doador.getListaHLADoador().charAt(i) == receptor.getListaHLAReceptor().charAt(i) ){
+////                quantidadeProteinasIguais+=10;
+////            }
+//        }        
                     
         return quantidadeProteinasIguais;
     

@@ -7,6 +7,7 @@ package tccAlgorithm;
  */
 
 import java.util.ArrayList;
+import sun.applet.Main;
 
 /**
  * Representa um grafo
@@ -24,34 +25,24 @@ public class Grafo {
     //private DoadorReceptor posicaoDoadorReceptor[]; 
     
     public Grafo() {
+        owner = new Controlador();
         /// String nome dos arquivo contendo os dados dos doadores cadáver e dos doadores vivos   
     	// Refatorar: Adicionar leitura de arquivo
-//        int tamanho = numParesDoadorReceptor + numRinsCadaveres;
-        owner = new Controlador();
         ArrayList<DoadorReceptor> paresDoadoresReceptores = owner.getParesDoadoresReceptores();      
         ArrayList<Doador> doadoresCadaveres = owner.getDoadoresCadaveres();
         
-        numParesDoadorReceptor = paresDoadoresReceptores.size();
+        int tamanho = paresDoadoresReceptores.size() + doadoresCadaveres.size();
         
         owner.defineListaDePreferenciasDoReceptor();
         
-        int tamanho = paresDoadoresReceptores.size() + doadoresCadaveres.size();
-        
         listaDeAdjacencia = new ArrayList<Vertice>();
         
-        //this.lista = new ArrayList<LinkedList<DoadorReceptor>>( );
-        //this.posicaoDoadorERinsCadaveres = new Doador[tamanho];
-        //this.posicaoDoadorReceptor = new DoadorReceptor[numParesDoadorReceptor];
+        for(int i = 0; i < paresDoadoresReceptores.size(); i++) {         
+            listaDeAdjacencia.add(new Vertice(paresDoadoresReceptores.get(i)));
+        }
         
-        for(int i = 0; i < tamanho; i++) {
-            // TODO: Terminar o add na lista de adjacencia e setArcoEmergente em vertice
-            Vertice vertice = new Vertice(paresDoadoresReceptores.get(i));
-            vertice.setArcoEmergente(new Arco(vertice, vertice));
-            
-            listaDeAdjacencia.add(vertice);
-                
-       //     this.posicaoDoadorERinsCadaveres[i] = new Doador();
-       //   this.posicaoDoadorReceptor[i] = new DoadorReceptor();
+        for(int i = 0; i < doadoresCadaveres.size(); i++) {
+            listaDeAdjacencia.add(new Vertice(doadoresCadaveres.get(i)));
         }
     }
     
@@ -111,4 +102,8 @@ public class Grafo {
 //        return new Grafo(numParesDoadorReceptor, numRinsCadaveres);
 //    }
 
+    public static void main(String[] args) {
+        Grafo grafo = new Grafo();
+        grafo.imprimeGrafo();
+    }
 }
