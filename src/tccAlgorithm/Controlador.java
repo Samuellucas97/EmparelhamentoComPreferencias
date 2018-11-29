@@ -27,14 +27,13 @@ public class Controlador {
         ArrayList<DoadorReceptor> paresDoadoresReceptoresAuxiliar = paresDoadoresReceptores;
         ArrayList<Doador> doadoresCadaveresAuxiliar = doadoresCadaveres;
         
-        for( int i = 0; i < paresDoadoresReceptores.size(); ++i ){
-            
+        for( int i = 0; i < paresDoadoresReceptores.size(); i++ ){
             paresDoadoresReceptoresAuxiliar = paresDoadoresReceptores;
             doadoresCadaveresAuxiliar = doadoresCadaveres;
             
-            //if(){            
-                Medico.defineListaDePreferenciasDoReceptor( paresDoadoresReceptores.get(i), paresDoadoresReceptoresAuxiliar, doadoresCadaveresAuxiliar);
-            //}    
+            paresDoadoresReceptoresAuxiliar.remove(i); // Removendo a possibilidade de adicionar o próprio par na lista de preferências.      
+            Medico.defineListaDePreferenciasDoReceptor(
+                    paresDoadoresReceptores.get(i), paresDoadoresReceptoresAuxiliar, doadoresCadaveresAuxiliar);   
         }    
     }
     
@@ -44,5 +43,20 @@ public class Controlador {
 
     public ArrayList<Doador> getDoadoresCadaveres() {
         return doadoresCadaveres;
+    }
+    
+    public static void main(String[] args) {
+        Controlador controlador = new Controlador();
+//        System.out.println(controlador.getParesDoadoresReceptores());
+        System.out.println(controlador.getParesDoadoresReceptores().get(0).getListaHLADoador().length());
+        System.out.println(controlador.getParesDoadoresReceptores().get(1).getListaHLADoador().length());
+        System.out.println(controlador.getParesDoadoresReceptores().get(2).getListaHLADoador().length());
+        System.out.println(controlador.getDoadoresCadaveres().get(0).getListaHLADoador().length());
+        System.out.println(controlador.getDoadoresCadaveres().get(1).getListaHLADoador().length());
+        System.out.println(controlador.getDoadoresCadaveres().get(2).getListaHLADoador().length());
+        System.out.println(controlador.getDoadoresCadaveres().get(3));
+        System.out.println(controlador.getDoadoresCadaveres().get(3).getListaHLADoador().length());
+        controlador.defineListaDePreferenciasDoReceptor();
+        
     }
 }

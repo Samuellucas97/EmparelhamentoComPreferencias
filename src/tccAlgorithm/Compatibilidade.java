@@ -1,5 +1,8 @@
 package tccAlgorithm;
 
+import java.util.Arrays;
+import java.util.List;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -99,17 +102,36 @@ public class Compatibilidade {
      * @param doador   Doador cadáver
      * @param receptor Receptor
      */
-    public static int compatibilidadeHLA(Doador doador, DoadorReceptor receptor) {
-            
+    public static int compatibilidadeHLA(Doador doador, DoadorReceptor receptor) { 
         int quantidadeProteinasIguais = 0;
-        System.out.println("TAMANHO: " +doador.getListaHLADoador().length());
-//        for(  int i = 0; i < doador.getListaHLADoador().length(); i++){
-////            if ( doador.getListaHLADoador().charAt(i) == receptor.getListaHLAReceptor().charAt(i) ){
-////                quantidadeProteinasIguais+=10;
-////            }
-//        }        
-                    
-        return quantidadeProteinasIguais;
+        System.out.println("FORA - HLA DOADOR:   "+doador.getListaHLADoador());
+        System.out.println("FORA - HLA RECEPTOR: "+receptor.getListaHLAReceptor());
+    	for(int i = 0; i < doador.getListaHLADoador().length(); i++){
+    		System.out.println("DENTRO - INDICE: " + i + " - " +
+    				doador.getListaHLADoador().charAt(i) + " e " + receptor.getListaHLAReceptor().charAt(i) +
+    				", são iguais? "+(doador.getListaHLADoador().charAt(i) == receptor.getListaHLAReceptor().charAt(i) ));
+            if (doador.getListaHLADoador().charAt(i) == receptor.getListaHLAReceptor().charAt(i) ){
+                quantidadeProteinasIguais+=10;
+            }
+    	} 
+    	return quantidadeProteinasIguais;
+    }
+
+//    public static int compatibilidadeHLA(Doador doador, DoadorReceptor receptor) {   
+//    	return 100-(-10*doador.getListaHLADoador().compareTo(receptor.getListaHLAReceptor()));
+//    }
+    public static long teste(Doador doador, DoadorReceptor receptor) {
+    	List<String> lista2 = Arrays.asList(receptor.getListaHLAReceptor().split(""));
+    	return 10*Arrays.asList(doador.getListaHLADoador().split("")).stream().filter(lista2::contains).count();
+    }
     
-    } 
-}
+//    public static void main(String[] args) {
+//        Compatibilidade compatibilidade = new Compatibilidade();
+//        Doador a = new Doador(" ", TiposDeSangue.A_negativo, "ABABABABAB");
+//        DoadorReceptor b = new DoadorReceptor(" ", TiposDeSangue.A_positivo, " ", "", TiposDeSangue.A_positivo, "ABABABABAB");
+//        System.out.println(compatibilidade.compatibilidadeHLA(a, b));
+//        System.out.println("Doador:   "+ a.getListaHLADoador());
+//        System.out.println("Receptor: "+ b.getListaHLAReceptor());
+//        System.out.println(teste(a,b));
+//    }
+} 

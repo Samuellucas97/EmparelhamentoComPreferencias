@@ -7,7 +7,6 @@ package tccAlgorithm;
  */
 
 import java.util.ArrayList;
-import sun.applet.Main;
 
 /**
  * Representa um grafo
@@ -28,9 +27,8 @@ public class Grafo {
         owner = new Controlador();
         /// String nome dos arquivo contendo os dados dos doadores cadáver e dos doadores vivos   
     	// Refatorar: Adicionar leitura de arquivo
-        ArrayList<DoadorReceptor> paresDoadoresReceptores = owner.getParesDoadoresReceptores();      
+        ArrayList<DoadorReceptor> paresDoadoresReceptores = owner.getParesDoadoresReceptores();
         ArrayList<Doador> doadoresCadaveres = owner.getDoadoresCadaveres();
-        
         int tamanho = paresDoadoresReceptores.size() + doadoresCadaveres.size();
         
         owner.defineListaDePreferenciasDoReceptor();
