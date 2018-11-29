@@ -56,9 +56,6 @@ ou permanece no procedimento.
 
 <img src="https://junit.org/junit5/" data-canonical-src="https://cdn-images-1.medium.com/max/982/1*AiTBjfsoj3emarTpaeNgKQ.png" width="200" height="240" />
 
-:link: <https://ac.els-cdn.com/S0022053105001663/1-s2.0-S0022053105001663-main.pdf?_tid=8de9b541-fef8-4554-abec-b5f9983dab50&acdnat=1541526377_77d3340b013da29fcaaef0ebed7569ae>
-
-:link: <http://delivery.acm.org/10.1145/2000000/1993626/p323-toulis.pdf?ip=177.20.152.120&id=1993626&acc=ACTIVE%20SERVICE&key=344E943C9DC262BB%2E14D3351198A938A4%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&__acm__=1542737114_de2313441b55b441a951fbee994d4cf7>
 
 :link: <https://www.tayfunsonmez.net/wp-content/uploads/2013/10/Kidneyexchange.pdf>
 
