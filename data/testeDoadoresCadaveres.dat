@@ -1,0 +1,10 @@
+Doador_0;A_positivo;BBCCBACB;Receptor_0;AB_positivo;AABBCCCB;
+Doador_1;O_positivo;ABBCCBAB;Receptor_1;B_positivo;CBCCABAB;
+Doador_2;O_negativo;CBABAABB;Receptor_2;O_negativo;CCCACCAA;
+Doador_3;O_positivo;BBCABBAB;Receptor_3;A_negativo;BABAAAAC;
+Doador_4;A_negativo;ACAAACBB;Receptor_4;O_positivo;BACBABBC;
+Doador_5;AB_negativo;ABBAACAA;Receptor_5;AB_negativo;BCBBABBB;
+Doador_6;AB_positivo;BBCCCACB;Receptor_6;A_positivo;ACBABBAA;
+Doador_7;B_positivo;ACAACABB;Receptor_7;AB_negativo;CABCABAA;
+Doador_8;B_positivo;BCCAAACA;Receptor_8;O_positivo;CACBBACA;
+Doador_9;O_negativo;BCAAABAB;Receptor_9;A_negativo;BAAAAACC
