@@ -1,18 +1,21 @@
 package grafos;
 
-import paciente.Doador;
+import java.util.ArrayList;
+
+import paciente.DoadorReceptor;
 
 /**
  * Representa um vértice do grafo
- * @author Samuel
+* @author  samuellucas97
+ *          candinhojr
  * @see	Arco
  */
 public class Vertice {
 	
 	/// ATRIBUTOS
 	
-	private Doador chave; //-> Chave do vértice 
-	private Arco arcoEmergente; // -> Arco que sae desse vértice
+	private DoadorReceptor chave; //-> Chave do vértice 
+	private ArrayList<Arco> arcosAdjacentes; // -> Arco que sae desse vértice
 
 	/**
 	 * Obs.: Não se usou uma lista de arcos adjacentes pois, como se fará um emparelhamento,
@@ -26,31 +29,31 @@ public class Vertice {
 	 * Construtor padrão
 	 */
 	public Vertice() {
-		chave = new Doador();
-		arcoEmergente = new Arco(); 
+		this.chave = new DoadorReceptor();
+		this.arcosAdjacentes = new ArrayList<Arco>();
 	}
 	
 	/**
 	 * Construtor parametrizado
 	 * @param	chave	Chave (id) do vértice
 	 */
-	public Vertice(Doador chave){
+	public Vertice(DoadorReceptor chave){
 		this.chave = chave;
-		this.arcoEmergente = new Arco();
+		this.arcosAdjacentes = new ArrayList<Arco>();
 	}
 	
 	/// MÉTODOS
 	
-	public Doador getChave() {
+	public DoadorReceptor getChave() {
 		return chave;
 	} 
 	
-	public Arco getArcoEmergente(){
-		return arcoEmergente;
+	public ArrayList<Arco> getArcosAdjacentes(){
+		return arcosAdjacentes;
 	}
         
-    public void setArcoEmergente(Arco arcoEmergente) {
-        this.arcoEmergente = arcoEmergente;
+    public void adicionarArcoAdjacente(Arco arcosAdjacente) {
+        this.arcosAdjacentes.add(arcosAdjacente);
     }
 	
     /// SOBRECARGA    

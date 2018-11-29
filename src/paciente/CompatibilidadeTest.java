@@ -17,8 +17,8 @@ public class CompatibilidadeTest {
 		/// CASO POSITIVO
 		assertEquals(true, 
 						Compatibilidade.compatibilidadeSanguinea( 
-							new Doador("Doador_0", TiposDeSangue.AB_positivo,"CBBCAAAC"), 
-							new DoadorReceptor("Doador_1",TiposDeSangue.B_positivo,"BAABBCAA","Receptor_1",TiposDeSangue.AB_positivo,"CBBCAAAC") 
+							new Doador("Doador_0", TiposDeSangue.AB_positivo,"CBBCAAACBA"), 
+							new DoadorReceptor("Doador_1",TiposDeSangue.B_positivo,"BAABBCAA","Receptor_1",TiposDeSangue.AB_positivo,"CBBCAABACC") 
 						),
 							
 						"O resultado esperado é que o doador 0 seja compatível com o receptor 1... Está correto?"
@@ -27,8 +27,8 @@ public class CompatibilidadeTest {
 		/// CASO NEGATIVO	
 		assertEquals(false, 
 				Compatibilidade.compatibilidadeSanguinea( 
-					new Doador("Doador_0", TiposDeSangue.AB_positivo,"CBBCAAAC"), 
-					new DoadorReceptor("Doador_1",TiposDeSangue.B_positivo,"BAABBCAA","Receptor_1",TiposDeSangue.O_positivo,"CBBCAAAC") 
+					new Doador("Doador_0", TiposDeSangue.AB_positivo,"CBBCAAACBA"), 
+					new DoadorReceptor("Doador_1",TiposDeSangue.B_positivo,"BAABBCAA","Receptor_1",TiposDeSangue.O_positivo,"CBBCAABACC") 
 				),
 					
 				"O resultado esperado é que o doador 0 NÃO seja compatível com o receptor 1... Está correto?"
@@ -45,8 +45,8 @@ public class CompatibilidadeTest {
 		/// CASO POSITIVO
 		assertEquals(true, 
 						Compatibilidade.compatibilidadeHLA( 
-							new Doador("Doador_0", TiposDeSangue.AB_positivo,"CBBCAAAC"), 
-							new DoadorReceptor("Doador_1",TiposDeSangue.B_positivo,"BAABBCAA","Receptor_1",TiposDeSangue.AB_positivo,"CBBCAAAC") 
+							new Doador("Doador_0", TiposDeSangue.AB_positivo,"CBBCAAACBA"), 
+							new DoadorReceptor("Doador_1",TiposDeSangue.B_positivo,"BAABBCAA","Receptor_1",TiposDeSangue.AB_positivo,"CBBCAAACBA") 
 						) == 100,
 							
 						"O resultado esperado é que o doador 0 seja compatível com o receptor 1 em 100 porcento... Está correto?"
@@ -55,8 +55,8 @@ public class CompatibilidadeTest {
 		/// OUTRO CASO POSITIVO	
 		assertEquals(true, 
 				Compatibilidade.compatibilidadeHLA( 
-						new Doador("Doador_0", TiposDeSangue.AB_positivo,"CBBCAAAC"), 
-						new DoadorReceptor("Doador_1", TiposDeSangue.B_positivo,"BAABBCAA","Receptor_1",TiposDeSangue.AB_positivo,"CBBCAAAC") 
+						new Doador("Doador_0", TiposDeSangue.AB_positivo,"CBBCAAACBA"), 
+						new DoadorReceptor("Doador_1", TiposDeSangue.B_positivo,"BAABBCAA","Receptor_1",TiposDeSangue.AB_positivo,"CBBCAAAACC") 
 					) > 70,
 					
 				"O resultado esperado é que o doador 0 seja compatível com o receptor 1 mais de 70 porcento... Está correto?"

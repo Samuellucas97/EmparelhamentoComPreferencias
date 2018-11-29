@@ -28,11 +28,11 @@ public class DoadorReceptor extends Doador{
      */
     public DoadorReceptor() {
 
-        super();
+        super("DoadorDesconhecido", TiposDeSangue.O_negativo, "BBBBABAABB");
 
-        this.nomeReceptor = new String();
+        this.nomeReceptor = new String("ReceptorDesconhecido");
         this.tipoDeSangueReceptor = TiposDeSangue.O_negativo;
-        this.listaHLAReceptor = new String();
+        this.listaHLAReceptor = "BBBBABAABB";
         this.listaDePreferencias = new ArrayList<Preferencia>();
         
     }
@@ -52,7 +52,7 @@ public class DoadorReceptor extends Doador{
                             TiposDeSangue tipoDeSangueReceptor,
                             String listaHLAReceptor) {
         
-        super( nomeDoador, false,tipoDeSangueDoador, listaHLADoador );
+        super( "DoadorDesconhecido", false,tipoDeSangueDoador, "BBBBABAABB" );
         
         this.nomeReceptor = nomeReceptor;
         this.tipoDeSangueReceptor = tipoDeSangueReceptor;
@@ -86,12 +86,12 @@ public class DoadorReceptor extends Doador{
      * mais preferido, após retornar o mesmo
      * @return O doador mais Preferido
      */
-    public Doador getMaisPreferido() throws NullPointerException{
+    public DoadorReceptor getMaisPreferido() throws NullPointerException{
         
         if(!listaDePreferencias.isEmpty()) {
-            Doador doador = listaDePreferencias.get(0).getDoador();
+        	DoadorReceptor doadorReceptor = listaDePreferencias.get(0).getDoador();
             listaDePreferencias.remove(0);
-            return doador;
+            return doadorReceptor;
         }
         return null;
     }
@@ -100,6 +100,7 @@ public class DoadorReceptor extends Doador{
     
     @Override
     public String toString(){
-        return super.toString() + " " + nomeReceptor + " " + tipoDeSangueReceptor + " " + listaHLAReceptor;
+        return "{(D/R) " + nomeDoador + "/" + nomeReceptor + "; " + tipoDeSangueDoador.getDescricao() + "/" + tipoDeSangueReceptor.getDescricao() +
+        		"; " + listaHLADoador + "/" + listaHLAReceptor + "}\n";
     }    
 }

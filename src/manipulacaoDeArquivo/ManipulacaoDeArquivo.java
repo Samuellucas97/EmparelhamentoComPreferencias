@@ -126,7 +126,6 @@ public class ManipulacaoDeArquivo{
                             dadosDeParesDoadorReceptor[i+5] ) 
                                     );
         }
-
         return paresDoadorReceptor;
     }
 

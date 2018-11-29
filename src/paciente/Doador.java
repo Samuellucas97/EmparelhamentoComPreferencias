@@ -90,7 +90,7 @@ public class Doador {
     
     @Override
     public String toString(){
-        return "" + nomeDoador + " " + tipoDeSangueDoador + " " + listaHLADoador;
+        return "" + nomeDoador + " " + tipoDeSangueDoador.getDescricao() + " " + listaHLADoador;
     }
 
 }

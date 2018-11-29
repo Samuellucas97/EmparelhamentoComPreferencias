@@ -13,12 +13,22 @@ package paciente;
  * @since   01.11.2018
  */
 public enum TiposDeSangue {
-    A_positivo,
-    A_negativo,
-    B_positivo, 
-    B_negativo,
-    O_positivo, 
-    O_negativo,
-    AB_positivo, 
-    AB_negativo;
+    A_positivo("A+"),
+    A_negativo("A-"),
+    B_positivo("B+"), 
+    B_negativo("B-"),
+    O_positivo("O+"), 
+    O_negativo("O-"),
+    AB_positivo("AB+"), 
+    AB_negativo("AB-");
+	
+	private String descricao;
+	
+	TiposDeSangue(String descricao) {
+		this.descricao = descricao;
+	}
+	
+	public String getDescricao() {
+		return descricao;
+	}
 }

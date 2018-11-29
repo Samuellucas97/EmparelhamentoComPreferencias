@@ -31,8 +31,7 @@ public class Medico {
      * @param   doadoresCadaveres Doador cadáver 
      */
     public static void defineListaDePreferenciasDoReceptor(DoadorReceptor receptor, 
-                                            ArrayList<DoadorReceptor> doadoresVivos,
-                                            ArrayList<Doador> doadoresCadaveres ) {
+                                            ArrayList<DoadorReceptor> doadoresVivos) {
             
         for( DoadorReceptor doador : doadoresVivos ){  /// ADICIONANDO AS PREFERÊNCIAS DO RECEPTOR DO PAR DOADOR-RECEPTOR OS CANDIDATOS VIVOS A TRANSPLANTE 
             if (Compatibilidade.compatibilidadeSanguinea(doador, receptor)) { /// Verificando compatibilidade sanguínea entre os candidatos a doadores 
@@ -44,20 +43,21 @@ public class Medico {
             }
         }
         
-        for( Doador doador : doadoresCadaveres ){    /// ADICIONANDO AS PREFERÊNCIAS DO RECEPTOR DO PAR DOADOR-RECEPTOR OS CANDIDATOS MORTOS A TRANSPLANTE
-            if (Compatibilidade.compatibilidadeSanguinea(doador, receptor)) {  /// Verificando compatibilidade sanguínea entre as candidatas a doadores
-                int taxaDeCompatibilidade = Compatibilidade.compatibilidadeHLA(doador, receptor);
-
-                if (taxaDeCompatibilidade > 70) { /// Condição de taxa de compatibilidade convencionada para ser compatível
-                    receptor.getListaDePreferencias().add(new Preferencia(doador, taxaDeCompatibilidade)); 
-               }
-            }
-        }
+        //POR HORA NÃO CONSIDERAREMOS DOADORES CADAVERES
+//        for( Doador doador : doadoresCadaveres ){    /// ADICIONANDO AS PREFERÊNCIAS DO RECEPTOR DO PAR DOADOR-RECEPTOR OS CANDIDATOS MORTOS A TRANSPLANTE
+//            if (Compatibilidade.compatibilidadeSanguinea(doador, receptor)) {  /// Verificando compatibilidade sanguínea entre as candidatas a doadores
+//                int taxaDeCompatibilidade = Compatibilidade.compatibilidadeHLA(doador, receptor);
+//
+//                if (taxaDeCompatibilidade > 70) { /// Condição de taxa de compatibilidade convencionada para ser compatível
+//                    receptor.getListaDePreferencias().add(new Preferencia(doador, taxaDeCompatibilidade)); 
+//               }
+//            }
+//        }
         
         
         Collections.sort( receptor.getListaDePreferencias(), Collections.reverseOrder() ); /// ORDENANDO A LISTA DE PREFERÊNCIAS
     
-        System.out.println(receptor.getListaDePreferencias() + " LINHA 57 - Medico");
+//        System.out.println(receptor.getListaDePreferencias() + " LINHA 57 - Medico");
 
     }
 }

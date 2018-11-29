@@ -9,11 +9,11 @@ package grafos;
 import java.util.ArrayList;
 
 import controle.ControladorDeMedico;
-import paciente.DoadorReceptor;
 import paciente.Doador;
+import paciente.DoadorReceptor;
 
 /**
- * Representa um grafo
+ * Representa um grafo por meio de uma lista de adjacência
  * @author  samuellucas97
  *          candinhojr
  * @since   13.11.2018
@@ -21,92 +21,75 @@ import paciente.Doador;
 public class Grafo {
     
 	private ArrayList<Arco> arcosDoGrafo;
-    private ArrayList<Vertice> listaDeAdjacencia; 
+    private ArrayList<Vertice> vertices; 
     private ControladorDeMedico owner;
-    private int numParesDoadorReceptor;
-    
-    //private Doador posicaoDoadorERinsCadaveres[];
-    //private DoadorReceptor posicaoDoadorReceptor[]; 
+    private int numeroDeVertices;
+    private int numeroDeArestas;
     
     public Grafo() {
-        owner = new ControladorDeMedico();
-        /// String nome dos arquivo contendo os dados dos doadores cadáver e dos doadores vivos   
-    	// Refatorar: Adicionar leitura de arquivo
-        ArrayList<DoadorReceptor> paresDoadoresReceptores = owner.getParesDoadoresReceptores();
-        ArrayList<Doador> doadoresCadaveres = owner.getDoadoresCadaveres();
-        int tamanho = paresDoadoresReceptores.size() + doadoresCadaveres.size();
+    	this.arcosDoGrafo = new ArrayList<Arco>();
+    	this.vertices = new ArrayList<Vertice>();
+    	this.numeroDeArestas = 0;
+    	this.numeroDeVertices = 0;
+    }
+    
+    public Grafo(ArrayList<Vertice> vertices) {
+    	this.arcosDoGrafo = new ArrayList<Arco>();
+    	this.vertices = new ArrayList<Vertice>();
         
-        owner.defineListaDePreferenciasDoReceptor();
-        
-        listaDeAdjacencia = new ArrayList<Vertice>();
-        
-        for(int i = 0; i < paresDoadoresReceptores.size(); i++) {         
-            listaDeAdjacencia.add(new Vertice(paresDoadoresReceptores.get(i)));
+        for(int i = 0; i < vertices.size(); i++) {         
+            vertices.add(vertices.get(i));
         }
         
-        for(int i = 0; i < doadoresCadaveres.size(); i++) {
-            listaDeAdjacencia.add(new Vertice(doadoresCadaveres.get(i)));
-        }
+        //POR HORA NÃO CONSIDERAREMOS DOADORES CADAVERES
+//        for(int i = 0; i < doadoresCadaveres.size(); i++) {
+//            listaDeAdjacencia.add(new Vertice(doadoresCadaveres.get(i)));
+//        }
     }
     
     /**
      * Imprime os vértices do grafo 
      */
-    public void imprimeGrafo() {
-        
-        System.out.print(" ");
-        for (int i = 0; i < this.numParesDoadorReceptor; i++) {
-            System.out.print(i +  " " );
-        }
-        System.out.println();
-        for (int i = 0; i < this.numParesDoadorReceptor; i++) {
-            System.out.print(i +  " " );
-            for (int j = 0; j < this.numParesDoadorReceptor; j++) {
-                System.out.print(this.listaDeAdjacencia.get(i).toString() + " ");
-            }
-            System.out.println();
-        }
+    public String toString() {
+    	String r = "";
+    	for (Vertice v : vertices) {
+			r += v.toString() + " -> ";
+			for (Arco arco : v.getArcosAdjacentes()) {
+				Vertice vertice = arco.getVerticeDoFim();
+				r+= vertice.toString() + ", ";
+			}
+			r += "\n";
+		}
+    	return r;
     } 
+    
     /**
-     * Usa-se o número de pares doadores-receptor com os doadores cadáveres para quantidade de vértices do grafo
-     * @return Quantidade de vértices do grafo 
+     * Imprime os vértices do grafo 
      */
-    public int numVertices() {
-        return this.numParesDoadorReceptor;
+    public void imprimeGrafo() {
+    	System.out.println(this.toString());
     }
     
-//    public Grafo ttcChains() {
-        
-  //  	int j = 0;
-  //      boolean encontrado = false;
-        
-        
-        
-        /** Passo 1: 
-         * Cada paciente aponta para o melhor rim (vindo de um DoadorReceptor ou de um rimCadaver) 
-         */
-    //    for(int i = 0; i < this.listaDeAdjacencia.size(); i++) {
-   //         j = 0;
-   //         encontrado = false;
-            
-            
-            
-            
-            // Enquanto o mais preferido doador do paciente não for encontrado, ou j < tamanho do array ele continua
-    //        while (encontrado || j < this.numParesDoadorReceptor || j < lista.get(i).size() ) {
-                // Percorre o vetor do paciente a procura do doador mais preferido, e caso ele encontre, ele seta o ponteiro na matriz
-    //            if (this.posicaoDoadorReceptor[i].getMaisPreferido().getNomeDoador().equals( this.posicaoDoadorERinsCadaveres[i].getNomeDoador()) ) {
-     //               this.lista.get(i).add( ); 
-     //               encontrado = true;
-     //           }
-     //           j++;
-     //       }
-     //   }
-//        return new Grafo(numParesDoadorReceptor, numRinsCadaveres);
-//    }
-
-    public static void main(String[] args) {
-        Grafo grafo = new Grafo();
-        grafo.imprimeGrafo();
+    public int getNumeroDeVertices() {
+        return this.numeroDeVertices;
     }
+    
+    public int getNumeroDeArestas() {
+        return this.numeroDeArestas;
+    }
+    
+    public boolean adicionaArco(Arco arco) {
+    	return this.arcosDoGrafo.add(arco);
+	}
+    
+    public boolean adicionaVertice(Vertice vertice) {
+    	return this.vertices.add(vertice);
+	}
+    
+//    public static void main(String[] args) {
+//        Grafo grafo = new Grafo();
+//        grafo.adicionaVertice(new Vertice());
+//        grafo.adicionaVertice(new Vertice());
+//        grafo.imprimeGrafo();
+//    }
 }

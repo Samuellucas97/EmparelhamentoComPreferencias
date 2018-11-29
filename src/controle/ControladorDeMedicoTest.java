@@ -24,8 +24,6 @@ class ControladorDeMedicoTest {
 	@DisplayName (" Testando definir a lista de prefências do receptor ")
 	void defineListaDePreferenciasDoReceptorTest() {
 		
-		c.defineListaDePreferenciasDoReceptor();
-		
 	}
 
 }

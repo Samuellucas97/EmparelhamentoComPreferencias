@@ -41,8 +41,7 @@ public class MedicoTest {
 	void defineListaDePreferenciasDoReceptorTest() {
 		
 		Medico.defineListaDePreferenciasDoReceptor(	receptor, 
-													doadoresVivos, 
-													doadoresCadaveres);
+													doadoresVivos);
 				
 		
 		assertEquals(true, 

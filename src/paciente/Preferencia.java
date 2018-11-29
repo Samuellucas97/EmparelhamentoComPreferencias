@@ -14,7 +14,7 @@ package paciente;
  */
 public class Preferencia implements Comparable<Preferencia>{
 
-    private Doador doador; //-> Doador 
+    private DoadorReceptor doador; //-> Doador 
     private int porcentagem; //-> Porcentagem de preferência
     
     /// CONSTRUTOR
@@ -24,14 +24,14 @@ public class Preferencia implements Comparable<Preferencia>{
      * @param doador        Nome do doador
      * @param porcentagem   Porcentagem de compatibilidade entre o doador e o receptor
      */
-    public Preferencia(Doador doador, int porcentagem){
+    public Preferencia(DoadorReceptor doador, int porcentagem){
         this.doador = doador;
         this.porcentagem = porcentagem;
     }
     
     /// GETTERS E SETTERS
     
-    public Doador getDoador() {
+    public DoadorReceptor getDoador() {
         return doador;
     }
 

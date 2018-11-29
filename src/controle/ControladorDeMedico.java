@@ -19,9 +19,10 @@ public class ControladorDeMedico {
     private ArrayList<Doador> doadoresCadaveres;
 
     public ControladorDeMedico() {
-        
         this.paresDoadoresReceptores = ManipulacaoDeArquivo.leituraComTratamentoDeArquivoDeDoadoresReceptores("./data/testeDoadoresReceptores.dat");
         this.doadoresCadaveres = ManipulacaoDeArquivo.leituraComTratamentoDeArquivoDeDoadoresCadaver("./data/testeDoadoresCadaveres.dat");
+        
+        this.defineListaDePreferenciasDoReceptor();
     }
 
     /**
@@ -29,21 +30,15 @@ public class ControladorDeMedico {
      * @param receptor  Receptor
      * @param doadores  Lista de doadores
      */
-    public void defineListaDePreferenciasDoReceptor() {     
-        ArrayList<DoadorReceptor> paresDoadoresReceptoresAuxiliar = paresDoadoresReceptores;
-        
-       // System.out.println(paresDoadoresReceptores + "\n" + doadoresCadaveres);
+    private void defineListaDePreferenciasDoReceptor() {     
+        ArrayList<DoadorReceptor> paresDoadoresReceptoresAuxiliar = new ArrayList<DoadorReceptor>();
         
         for( int i = 0; i < paresDoadoresReceptores.size(); ++i ){
-            
-       // 	System.out.println(i + " " + paresDoadoresReceptores.get(i) + "  LINHA 37 - Controlador");  
-        	
-            paresDoadoresReceptoresAuxiliar = paresDoadoresReceptores;
+            paresDoadoresReceptoresAuxiliar = (ArrayList<DoadorReceptor>)paresDoadoresReceptores.clone();
             paresDoadoresReceptoresAuxiliar.remove(i);
             
-            Medico.defineListaDePreferenciasDoReceptor( paresDoadoresReceptores.get(i), paresDoadoresReceptoresAuxiliar, doadoresCadaveres);
-     
-        }    
+            Medico.defineListaDePreferenciasDoReceptor(paresDoadoresReceptores.get(i), paresDoadoresReceptoresAuxiliar);
+        }   
     }
     
     public ArrayList<DoadorReceptor> getParesDoadoresReceptores() {

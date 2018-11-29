@@ -25,9 +25,9 @@ public class BuscaEmProfundidade {
 	public BuscaEmProfundidade(Grafo grafo) {
 		
 		this.grafo = grafo;
-		verticeDescobertoPoremNaoComplematemnteVisitado = new int[ grafo.numVertices() ];
-		veticesCompletamenteVisitados = new int[ grafo.numVertices() ];
-		verticeAntecessorPeloCaminho = new int[ grafo.numVertices() ];
+		verticeDescobertoPoremNaoComplematemnteVisitado = new int[ grafo.getNumeroDeVertices() ];
+		veticesCompletamenteVisitados = new int[ grafo.getNumeroDeVertices() ];
+		verticeAntecessorPeloCaminho = new int[ grafo.getNumeroDeVertices() ];
 		
 	}
 	
@@ -55,10 +55,10 @@ public class BuscaEmProfundidade {
 	public void buscaEmProfundidade() {
 		
 		int tempo = 0;
-		int[] coresDosVerticesDoGrafo = new int[ grafo.numVertices() ];
+		int[] coresDosVerticesDoGrafo = new int[ grafo.getNumeroDeVertices() ];
 		
 		/// INICIANDO A BUSCA PINTANDO TODOS OS VÉRTICES DE BRANCO TENDO EM VISTA QUE NÍNGUÉM FOI VISITADO AINDA.
-		for( int i=0; i < grafo.numVertices(); ++i ) {
+		for( int i=0; i < grafo.getNumeroDeVertices(); ++i ) {
 		
 			coresDosVerticesDoGrafo[i] = branco;
 			
@@ -66,7 +66,7 @@ public class BuscaEmProfundidade {
 		}
 
 		/// PERCORRENDO TODO O GRAFO
-		for( int i=0; i < grafo.numVertices(); ++i ) {
+		for( int i=0; i < grafo.getNumeroDeVertices(); ++i ) {
 			
 			if(coresDosVerticesDoGrafo[i] == branco){ 	///  O FATO DE QUE O VÉRTICE ESTAVA COM A COR BRANCA INDICA QUE ELE 
 														/// ESTÁ SENDO VISITADO PELA PRIMEIRA VEZ.
