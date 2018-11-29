@@ -16,14 +16,14 @@ Neste repositório encontra-se a implementação em Java do algoritmo _Top Trade
 Agora estamos prontos para descrever o mecanismo do TTCC em sua forma geral. Considerando a preferências dos agentes, o mecanismo do TTCC encontra o resultado do problema de correspondência 
 através do seguinte procedimento:
 1. Em cada rodada do algoritmo TTCC:
-	- (i) com base nas suas preferências declaradas, cada agente ak que não tenha recebido um item aponta para o melhor item restante não atribuído em IP ∪ IA, 
+	- (i) com base nas suas preferências declaradas, cada agente a que não tenha recebido um item aponta para o melhor item restante não atribuído em IP ∪ IA, 
 	- (ii) cada agente remanescente que tenha recebido um item continua apontando para ela
 atribuição e 
 	- (iii) cada item restante não atribuído em pontos de IP para seu proprietário
   
 
 2. Dado o apontamento no Passo 1, existe um ciclo ou uma cadeia; ou ambos. Nesta etapa (Etapa2), alocações associadas a ciclos são feitas: 
-	- (i) Prosseguir para o Passo 3 se não houver ciclos. Caso contrário, localize um ciclo 7 e atribua a cada agente no ciclo, o item para o qual ela aponta. A tarefa é final para esses Agentes Remova todos os agentes e itens no ciclo do sistema.
+	- (i) Prosseguir para o Passo 3 se não houver ciclos. Caso contrário, localize um ciclo e atribua a cada agente no ciclo, o item para o qual ela aponta. A tarefa é final para esses Agentes Remova todos os agentes e itens no ciclo do sistema.
 	- (ii) Se todo agente tiver recebido um item, vá para a Etapa 4. Caso contrário, volte para Passo 1.
    
 
@@ -37,7 +37,7 @@ ou permanece no procedimento.
 ### Caso de teste
 
 
-**Entradasa do algoritmo:**  
+**Entradas do algoritmo:**  
   
 
 - Conjunto de doador-receptor
