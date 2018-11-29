@@ -13,8 +13,8 @@ import paciente.DoadorReceptor;
 public class Vertice {
 	
 	/// ATRIBUTOS
-	
-	private DoadorReceptor chave; //-> Chave do vértice 
+	private int chave; //-> Chave do vértice 
+	private DoadorReceptor conteudo; //-> Conteúdo do vértice 
 	private ArrayList<Arco> arcosAdjacentes; // -> Arco que sae desse vértice
 
 	/**
@@ -28,8 +28,9 @@ public class Vertice {
 	/**
 	 * Construtor padrão
 	 */
-	public Vertice() {
-		this.chave = new DoadorReceptor();
+	public Vertice(int chave) {
+		this.chave = chave;
+		this.conteudo = new DoadorReceptor();
 		this.arcosAdjacentes = new ArrayList<Arco>();
 	}
 	
@@ -37,15 +38,18 @@ public class Vertice {
 	 * Construtor parametrizado
 	 * @param	chave	Chave (id) do vértice
 	 */
-	public Vertice(DoadorReceptor chave){
+	public Vertice(int chave, DoadorReceptor conteudo){
 		this.chave = chave;
+		this.conteudo = conteudo;
 		this.arcosAdjacentes = new ArrayList<Arco>();
 	}
 	
 	/// MÉTODOS
-	
-	public DoadorReceptor getChave() {
+	public int getChave() {
 		return chave;
+	}
+	public DoadorReceptor getConteudo() {
+		return conteudo;
 	} 
 	
 	public ArrayList<Arco> getArcosAdjacentes(){
@@ -60,7 +64,7 @@ public class Vertice {
         
 	@Override
 	public String toString() {
-		return "" + chave.toString();
+		return "" + "(" + chave + ")" + " " + conteudo.toString();
 	}
 	
 }

@@ -9,8 +9,6 @@ package grafos;
 import java.util.ArrayList;
 
 import controle.ControladorDeMedico;
-import paciente.Doador;
-import paciente.DoadorReceptor;
 
 /**
  * Representa um grafo por meio de uma lista de adjacência
@@ -86,10 +84,16 @@ public class Grafo {
     	return this.vertices.add(vertice);
 	}
     
+    public Vertice getVertice(int posicao) {
+    	return vertices.get(posicao);
+    }
+    
 //    public static void main(String[] args) {
 //        Grafo grafo = new Grafo();
-//        grafo.adicionaVertice(new Vertice());
-//        grafo.adicionaVertice(new Vertice());
+//        for (int i = 0; i < 3; i++) {
+//        	Vertice v = new Vertice(i);
+//        	grafo.adicionaVertice(v);
+//		}
 //        grafo.imprimeGrafo();
 //    }
 }

@@ -1,5 +1,8 @@
 package algoritmos;
 
+import java.awt.List;
+
+import grafos.Arco;
 import grafos.Grafo;
 
 public class BuscaEmProfundidade {
@@ -11,8 +14,10 @@ public class BuscaEmProfundidade {
 	private static final int preto = 2; //-> Indica que o vértice e seus adjacentes foram completamente visitados 
 	
 	private int[] verticeDescobertoPoremNaoComplematemnteVisitado;
-	private int[] veticesCompletamenteVisitados; //-> VetorArmazena Tempo de término do exame da lista de adjac�ncia 
+	private int[] verticesCompletamenteVisitados; //-> VetorArmazena Tempo de término do exame da lista de adjac�ncia 
 	private int[] verticeAntecessorPeloCaminho;
+	private int[] corDosVertices;
+	private int tempo;
 	
 	private Grafo grafo;
 	
@@ -23,11 +28,12 @@ public class BuscaEmProfundidade {
 	 * @param grafo Grafo a ser trabalhado
 	 */
 	public BuscaEmProfundidade(Grafo grafo) {
-		
 		this.grafo = grafo;
-		verticeDescobertoPoremNaoComplematemnteVisitado = new int[ grafo.getNumeroDeVertices() ];
-		veticesCompletamenteVisitados = new int[ grafo.getNumeroDeVertices() ];
-		verticeAntecessorPeloCaminho = new int[ grafo.getNumeroDeVertices() ];
+		this.verticeDescobertoPoremNaoComplematemnteVisitado = new int[ grafo.getNumeroDeVertices() ];
+		this.verticesCompletamenteVisitados = new int[ grafo.getNumeroDeVertices() ];
+		this.verticeAntecessorPeloCaminho = new int[ grafo.getNumeroDeVertices() ];
+		this.tempo = 0;
+		
 		
 	}
 	
@@ -40,13 +46,35 @@ public class BuscaEmProfundidade {
 	 * @param corDosVertices	Vetor que armazena a cor de cada vértice do grafo
 	 * @return
 	 */
-	private int visita(int vertice, int tempo, int[] corDosVertices) {
+	private int visita(int vertice) {
 		
 		corDosVertices[vertice] = cinza;
-		this.verticeAntecessorPeloCaminho[vertice] = tempo + 1;
-		
-		
-		return 5;
+		this.tempo++;
+		this.verticeDescobertoPoremNaoComplematemnteVisitado[vertice] = tempo;
+		// TODO:TERMINAR!!!
+//		List<Integer> adjacentes = grafo.getVertice(vertice).getArcosAdjacentes();
+//		
+//		for (int i : adjacentes) {
+//			
+//		}
+//		
+//		
+//		this.verticeAntecessorPeloCaminho[vertice] = tempo + 1;
+//		
+//		if(!this.grafo.getVertice(vertice).getArcosAdjacentes().isEmpty()) {
+//			Arco a = this.grafo.getVertice(vertice).getArcosAdjacentes().get(0);
+//			while(a != null) {
+//				Integer v = a.getVerticeDoFim().getChave();
+//				if(corDosVertices[v] == branco) {
+//					this.verticeAntecessorPeloCaminho[v] = vertice;
+//					tempo = this.visita(v, tempo, corDosVertices);
+//				}
+//				a = this.grafo.getVertice(vertice).getArcosAdjacentes().;
+//			}
+//		}
+//		corDosVertices[vertice] = preto;
+//		this.verticesCompletamenteVisitados[vertice] = ++tempo;
+		return tempo;
 	}
 	
 	/**
@@ -70,7 +98,7 @@ public class BuscaEmProfundidade {
 			
 			if(coresDosVerticesDoGrafo[i] == branco){ 	///  O FATO DE QUE O VÉRTICE ESTAVA COM A COR BRANCA INDICA QUE ELE 
 														/// ESTÁ SENDO VISITADO PELA PRIMEIRA VEZ.
-				tempo = visita(i, tempo, coresDosVerticesDoGrafo);
+				tempo = visita(i);
 				
 			}
 		

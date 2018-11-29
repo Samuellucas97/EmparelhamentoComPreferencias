@@ -3,7 +3,6 @@ package controle;
 import java.util.ArrayList;
 
 import grafos.Vertice;
-import manipulacaoDeArquivo.ManipulacaoDeArquivo;
 import paciente.DoadorReceptor;
 
 /**
@@ -27,7 +26,7 @@ public class Conversor {
 	    this.vertices = new ArrayList<Vertice>();
 	    
 	    for(int i = 0; i < paresDoadoresReceptores.size(); i++) {   
-            vertices.add(new Vertice(paresDoadoresReceptores.get(i)));
+            vertices.add(new Vertice(i, paresDoadoresReceptores.get(i)));
         }
 	}   
 	

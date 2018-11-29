@@ -14,16 +14,7 @@ public class Arco {
 	private Vertice verticeDoFim; //-> Vértice do fim
 	
 	/// CONSTRUTORES
-	
-	/**
-	 * Construtor padrão
-	 */
-	public Arco( ) {
-		verticeDoInicio = new Vertice();
-		verticeDoFim = new Vertice();
-	}
-	
-	/**
+		/**
 	 * Construtor parametrizado
 	 * @param verticeDoInicio Vértice do início
 	 * @param verticeDoFim Vértice do fim
