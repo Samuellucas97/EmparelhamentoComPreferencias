@@ -1,6 +1,6 @@
-# Algoritmo TTC Chains
+# Emparelhamento com prefêrencias
 ## Introdução
-Implementação em Java do algoritmo _Top Trade Cycles Chains_ (**TTC Chains**) voltado para o problema de emparelhamento cruzado referente ao 3º trabalho da disciplina de ***Grafos***.
+Neste repositório encontra-se a implementação em Java do algoritmo _Top Trade Cycles Chains_ (**TTC Chains**) voltado para o problema de troca de rins cruzadas referente ao 3º trabalho da disciplina de ***Grafos***.
 
 ### Organização do Repositório  
   
@@ -9,7 +9,32 @@ Implementação em Java do algoritmo _Top Trade Cycles Chains_ (**TTC Chains**) 
 * `bin`: Arquivos binários.
 
 
-## Caso de teste
+## Top Trading Cycles Chains 
+  
+### Descrição do Algoritmo
+
+Agora estamos prontos para descrever o mecanismo do TTCC em sua forma geral. Considerando a preferências dos agentes, o mecanismo do TTCC encontra o resultado do problema de correspondência 
+através do seguinte procedimento:
+1. Em cada rodada do algoritmo TTCC:
+	- (i) com base nas suas preferências declaradas, cada agente ak que não tenha recebido um item aponta para o melhor item restante não atribuído em IP ∪ IA, 
+	- (ii) cada agente remanescente que tenha recebido um item continua apontando para ela
+atribuição e 
+	- (iii) cada item restante não atribuído em pontos de IP para seu proprietário
+  
+
+2. Dado o apontamento no Passo 1, existe um ciclo ou uma cadeia; ou ambos. Nesta etapa (Etapa2), alocações associadas a ciclos são feitas: 
+	- (i) Prosseguir para o Passo 3 se não houver ciclos. Caso contrário, localize um ciclo 7 e atribua a cada agente no ciclo, o item para o qual ela aponta. A tarefa é final para esses Agentes Remova todos os agentes e itens no ciclo do sistema.
+	- (ii) Se todo agente tiver recebido um item, vá para a Etapa 4. Caso contrário, volte para Passo 1.
+   
+
+ 3. Cada par item-agente restante inicia uma cadeia. Como várias cadeias podem coexistir:
+	- (i) Selecione apenas uma das cadeias com uma regra de seleção de cadeia predefinida. A atribuição é final para os agentes na cadeia selecionada. Além de selecionar uma cadeia, a cadeia regra de seleção também determina se a cadeia selecionada é removida imediatamente
+ou permanece no procedimento.
+	- (ii) Se todo agente tiver recebido um item, vá para a Etapa 4. Caso contrário, volte para a Etapa 1 para iniciar a próxima rodada de alocação.
+4. Remova todas as correntes (se houver alguma). O algoritmo termina
+
+
+### Caso de teste
 
 
 **ENTRADA:**  
@@ -30,27 +55,6 @@ os antígenos do doador, que possam causar rejeição
 imediata;
 4.Verifica-se a compatibilidade (HLA), semelhança entre
 o receptor e o doador;
-
-## Descrição do Algoritmo
-Agora estamos prontos para descrever o mecanismo do TTCC em sua forma geral. Considerando a preferências dos agentes, o mecanismo do TTCC encontra o resultado do problema de correspondência 
-através do seguinte procedimento:
-1. Em cada rodada do algoritmo TTCC:
-	- (i) com base nas suas preferências declaradas, cada agente ak que não tenha recebido um item aponta para o melhor item restante não atribuído em IP ∪ IA, 
-	- (ii) cada agente remanescente que tenha recebido um item continua apontando para ela
-atribuição e 
-	- (iii) cada item restante não atribuído em pontos de IP para seu proprietário
-  
-
-2. Dado o apontamento no Passo 1, existe um ciclo ou uma cadeia; ou ambos. Nesta etapa (Etapa2), alocações associadas a ciclos são feitas: 
-	- (i) Prosseguir para o Passo 3 se não houver ciclos. Caso contrário, localize um ciclo 7 e atribua a cada agente no ciclo, o item para o qual ela aponta. A tarefa é final para esses Agentes Remova todos os agentes e itens no ciclo do sistema.
-	- (ii) Se todo agente tiver recebido um item, vá para a Etapa 4. Caso contrário, volte para Passo 1.
-   
-
- 3. Cada par item-agente restante inicia uma cadeia. Como várias cadeias podem coexistir:
-	- (i) Selecione apenas uma das cadeias com uma regra de seleção de cadeia predefinida. A atribuição é final para os agentes na cadeia selecionada. Além de selecionar uma cadeia, a cadeia regra de seleção também determina se a cadeia selecionada é removida imediatamente
-ou permanece no procedimento.
-	- (ii) Se todo agente tiver recebido um item, vá para a Etapa 4. Caso contrário, volte para a Etapa 1 para iniciar a próxima rodada de alocação.
-4. Remova todas as correntes (se houver alguma). O algoritmo termina
 
 ## Referência 
 
