@@ -2,14 +2,17 @@
 ## Introdução
 Implementação em Java do algoritmo _Top Trade Cycles Chains_ (**TTC Chains**) voltado para o problema de emparelhamento cruzado referente ao 3º trabalho da disciplina de ***Grafos***.
 
-<p align="right">
-<img src="http://www.lostdesign.net/glossario/java.jpg" width="9%"  />
-</p>
+### Organização do Repositório  
+  
+* `src`: Implementação das classes.   
+* `data`: Arquivos contendo dados para caso de teste. 
+* `bin`: Arquivos binários.
+
 
 ## Caso de teste
 
 
-ENTRADA:  
+**ENTRADA:**  
   
 
 - Conjunto de doador-receptor
