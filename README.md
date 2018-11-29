@@ -54,9 +54,11 @@ ou permanece no procedimento.
 
 ## Referência 
 
-<img src="https://junit.org/junit5/" data-canonical-src="https://cdn-images-1.medium.com/max/982/1*AiTBjfsoj3emarTpaeNgKQ.png" width="200" height="240" />
+<img src="https://junit.org/junit5/.." data-canonical-src="https://cdn-images-1.medium.com/max/982/1*AiTBjfsoj3emarTpaeNgKQ.png" width="200" height="240" />
 
-
+:link: <https://www.sciencedirect.com/science/article/pii/S0022053105001663>  
+:link: <http://econcs.seas.harvard.edu/files/econcs/files/toulis-ec11.pdf>  
+:link: <http://econcs.seas.harvard.edu/files/econcs/files/toulis_gamesecon15.pdf>  
 :link: <https://www.tayfunsonmez.net/wp-content/uploads/2013/10/Kidneyexchange.pdf>
 
 ## Autores :smiley:
