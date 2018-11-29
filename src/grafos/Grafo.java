@@ -8,7 +8,7 @@ package grafos;
 
 import java.util.ArrayList;
 
-import controle.Controlador;
+import controle.ControladorDeMedico;
 import paciente.DoadorReceptor;
 import paciente.Doador;
 
@@ -22,14 +22,14 @@ public class Grafo {
     
 	private ArrayList<Arco> arcosDoGrafo;
     private ArrayList<Vertice> listaDeAdjacencia; 
-    private Controlador owner;
+    private ControladorDeMedico owner;
     private int numParesDoadorReceptor;
     
     //private Doador posicaoDoadorERinsCadaveres[];
     //private DoadorReceptor posicaoDoadorReceptor[]; 
     
     public Grafo() {
-        owner = new Controlador();
+        owner = new ControladorDeMedico();
         /// String nome dos arquivo contendo os dados dos doadores cadáver e dos doadores vivos   
     	// Refatorar: Adicionar leitura de arquivo
         ArrayList<DoadorReceptor> paresDoadoresReceptores = owner.getParesDoadoresReceptores();

@@ -13,12 +13,12 @@ import paciente.Doador;
  *          candinhojr
  * @since   03.11.2018
  */
-public class Controlador {
+public class ControladorDeMedico {
     
     private ArrayList<DoadorReceptor> paresDoadoresReceptores;
     private ArrayList<Doador> doadoresCadaveres;
 
-    public Controlador() {
+    public ControladorDeMedico() {
         
         this.paresDoadoresReceptores = ManipulacaoDeArquivo.leituraComTratamentoDeArquivoDeDoadoresReceptores("./data/testeDoadoresReceptores.dat");
         this.doadoresCadaveres = ManipulacaoDeArquivo.leituraComTratamentoDeArquivoDeDoadoresCadaver("./data/testeDoadoresCadaveres.dat");

@@ -12,12 +12,12 @@ import paciente.DoadorReceptor;
 import paciente.TiposDeSangue;
 
 @DisplayName ("Testando métodos da classe Controlador") 
-class ControladorTest {
+class ControladorDeMedicoTest {
 	
-	private Controlador c;
+	private ControladorDeMedico c;
 	
-	public ControladorTest() {
-		c = new Controlador();
+	public ControladorDeMedicoTest() {
+		c = new ControladorDeMedico();
 	}
 
 	@Test
