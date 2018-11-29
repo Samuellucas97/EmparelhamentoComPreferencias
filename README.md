@@ -37,7 +37,7 @@ ou permanece no procedimento.
 ### Caso de teste
 
 
-**ENTRADA:**  
+**Entradasa do algoritmo:**  
   
 
 - Conjunto de doador-receptor
