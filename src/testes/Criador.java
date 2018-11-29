@@ -75,6 +75,7 @@ public class Criador {
             
             String tipoSanguineoDoador = tipoSanguineo();
             String tipoSanguineoReceptor = tipoSanguineo();
+            
             String sequenciaHLADoador = sequenciaHLA();
             String sequenciaHLAReceptor = "";
             
@@ -82,11 +83,12 @@ public class Criador {
             DoadorReceptor objetoReceptor = null;
             
             while(compativeis) {
+            	sequenciaHLAReceptor = sequenciaHLA();
                 objetoReceptor = new DoadorReceptor("", (TiposDeSangue.valueOf(tipoSanguineoReceptor)), sequenciaHLAReceptor, "", (TiposDeSangue.valueOf(tipoSanguineoReceptor)), sequenciaHLAReceptor);
                 if(Compatibilidade.compatibilidadeHLA(objetoDoador, objetoReceptor) < 70) {
-                    sequenciaHLAReceptor = sequenciaHLA();
                     compativeis = false;
                 } else {
+                    sequenciaHLAReceptor = sequenciaHLA();
                     compativeis = true;
                 }    
             }
@@ -94,17 +96,17 @@ public class Criador {
             //Insere para cada linha
             buffWrite.append(doador()+i+";"+
                     tipoSanguineoDoador+";"+
-                    sequenciaHLA()+";"+
+                    sequenciaHLADoador+";"+
                     receptor()+i+";"+
                     tipoSanguineoReceptor+";"+
-                    sequenciaHLA()+";"+"\n");
+                    sequenciaHLAReceptor+";"+"\n");
         }
         buffWrite.close();
     }
 
     public static void main(String[] args) throws IOException {
 
-        criarArquivoDoadorReceptor(10);    
+        criarArquivoDoadorReceptor(100);    
 
     }
     
