@@ -31,6 +31,7 @@ public class Criador {
             "AB_negativo"};
     private static String doador = "Doador_";
     private static String receptor = "Receptor_";
+    private static String doadorCadaver = "DoadorCadaver_";
     private static char[] caracteresHLA = {'A', 'B', 'C'};
     
     public Criador() {}
@@ -51,6 +52,10 @@ public class Criador {
         return receptor;
     }
     
+    private static String doadorCadaver() {
+        return doadorCadaver;
+    }
+    
     public static String tipoSanguineo() {
         String tmp = "";
             int c = (int) Math.floor(Math.random()*tipagemSanguinea().length);
@@ -67,9 +72,9 @@ public class Criador {
         return tmp;
     }
     
-    public static void criarArquivoDoadorReceptor(int numeroTotalDePares) throws IOException {
+    public static void criarArquivoDoadoresReceptores(int numeroTotalDePares) throws IOException {
         
-        BufferedWriter buffWrite = new BufferedWriter(new FileWriter("./src/teste.dat"));
+        BufferedWriter buffWrite = new BufferedWriter(new FileWriter("./src/testeDoadoresReceptores.dat"));
         for (int i = 0; i < numeroTotalDePares; i++) {
             boolean compativeis = true;
             
@@ -105,9 +110,26 @@ public class Criador {
     }
 
     public static void main(String[] args) throws IOException {
-
-        criarArquivoDoadorReceptor(100);    
-
+        criarArquivoDoadoresReceptores(100);
+        criarArquivoDoadoresCadaveres(10);
     }
+
+	private static void criarArquivoDoadoresCadaveres(int numeroTotalDeCadaveres) throws IOException {
+		BufferedWriter buffWrite = new BufferedWriter(new FileWriter("./src/testeDoadoresCadaveres.dat"));
+		for (int i = 0; i < numeroTotalDeCadaveres; i++) {
+			String tipoSanguineoDoador = tipoSanguineo();
+			String sequenciaHLADoador = sequenciaHLA();
+        	//Insere para cada linha
+            try {
+				buffWrite.append(doadorCadaver()+i+";"+
+				        tipoSanguineoDoador+";"+
+				        sequenciaHLADoador+";"+"\n");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+        }
+        buffWrite.close();
+		
+	}
     
 }
