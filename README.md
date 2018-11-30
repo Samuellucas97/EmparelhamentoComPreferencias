@@ -41,10 +41,9 @@ ou permanece no procedimento.
   
 
 - Conjunto de doador-receptor
-	(CLASSE DOADOR-RECEPTOR)
 - Preferencias de cada doador-receptor que depende:
-	tipos de sangue(**A+/-**, **B+/-**, **O+/-**, **AB+/-**) 
-	grupos de HLA (A, B, DR)
+	...Tipos de sangue(**A+/-**, **B+/-**, **O+/-**, **AB+/-**) 
+	...Grupos de HLA (A, B, DR)
 
 Sequência para definir as preferências:
 1. Compara-se o grupo sangüíneo do doador com o do
