@@ -41,7 +41,7 @@ ou permanece no procedimento.
   
 
 - Conjunto de doador-receptor
-- Preferencias de cada doador-receptor que depende:
+- Preferencias de cada doador-receptor que depende:  
 	Tipos de sangue(**A+/-**, **B+/-**, **O+/-**, **AB+/-**)  
 	Grupos de HLA (A, B, DR)  
 	
