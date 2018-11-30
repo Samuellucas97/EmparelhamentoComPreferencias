@@ -1,5 +1,6 @@
 package grafos;
 
+import java.awt.List;
 import java.util.ArrayList;
 
 import paciente.DoadorReceptor;
@@ -52,7 +53,7 @@ public class Vertice {
 		return conteudo;
 	} 
 	
-	public ArrayList<Arco> getArcosAdjacentes(){
+	public java.util.List<Arco> getArcosAdjacentes(){
 		return arcosAdjacentes;
 	}
         

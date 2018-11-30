@@ -5,6 +5,11 @@ import java.awt.List;
 import grafos.Arco;
 import grafos.Grafo;
 
+/**
+ * Implementação da Busca em Profundidade	
+ * @author  candinhojr
+ * @author  samuellucas97
+ */
 public class BuscaEmProfundidade {
 	
 	/// ATRIBUTOS
@@ -51,13 +56,48 @@ public class BuscaEmProfundidade {
 		corDosVertices[vertice] = cinza;
 		this.tempo++;
 		this.verticeDescobertoPoremNaoComplematemnteVisitado[vertice] = tempo;
-		// TODO:TERMINAR!!!
-//		List<Integer> adjacentes = grafo.getVertice(vertice).getArcosAdjacentes();
-//		
-//		for (int i : adjacentes) {
-//			
-//		}
-//		
+		/**
+		 * Método copiado
+		List<Integer> adjacentes = g.listDeAdjacentes(u);
+        for (int v : adjacentes) {
+            if (cor[v] == 1) {
+                arestasDeRetorno.add(new Aresta(u, v));
+            }
+            if (cor[v] == 2) {
+                if (tempoDescoberta[u] < tempoDeDescoberta(v)) {
+                    arestasDeAvanco.add(new Aresta(u, v));
+                } else {
+                    arestasDeCruzamento.add(new Aresta(u, v));
+                }
+            }
+            if (cor[v] == 0) {
+                arestasDeArvore.add(new Aresta(u, v));
+                visit(v);
+            }
+        }
+		 */
+		
+		java.util.List<Arco> adjacentes = grafo.getVertice(vertice).getArcosAdjacentes();
+		
+		for (Arco a : adjacentes) {
+			if(corDosVertices[a.getVerticeDoInicio().getChave()] == cinza) {
+				//arestasDeRetorno.add(new Aresta(u, v));
+			} 
+			if(corDosVertices[a.getVerticeDoInicio().getChave()] == preto) {
+				if (verticeDescobertoPoremNaoComplematemnteVisitado[vertice] < tempoDeDescoberta(a.getVerticeDoInicio().getChave())) {
+                    //arestasDeAvanco.add(new Aresta(u, v));
+                } else {
+                    //arestasDeCruzamento.add(new Aresta(u, v));
+                }
+			}
+			if(corDosVertices[a.getVerticeDoInicio().getChave()] == branco) {
+				//arestasDeArvore.add(new Aresta(u, v));
+				visita(a.getVerticeDoInicio().getChave());
+			}
+		}
+		corDosVertices[vertice] = preto;
+		return verticesCompletamenteVisitados[vertice] = ++tempo;
+	}
 //		
 //		this.verticeAntecessorPeloCaminho[vertice] = tempo + 1;
 //		
@@ -72,10 +112,10 @@ public class BuscaEmProfundidade {
 //				a = this.grafo.getVertice(vertice).getArcosAdjacentes().;
 //			}
 //		}
-//		corDosVertices[vertice] = preto;
-//		this.verticesCompletamenteVisitados[vertice] = ++tempo;
-		return tempo;
-	}
+	
+	public int tempoDeDescoberta(int origem) {
+        return verticeDescobertoPoremNaoComplematemnteVisitado[origem];
+    }
 	
 	/**
 	 * algoritmo de busca em profundidade baseado no conceito de backtrack

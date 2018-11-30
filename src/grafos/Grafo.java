@@ -13,7 +13,7 @@ import controle.ControladorDeMedico;
 /**
  * Representa um grafo por meio de uma lista de adjacência
  * @author  samuellucas97
- *          candinhojr
+ * @author  candinhojr
  * @since   13.11.2018
  */
 public class Grafo {
