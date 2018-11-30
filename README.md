@@ -58,7 +58,8 @@ o receptor e o doador;
 
 ## Referência 
 
-<img src="https://cdn-images-1.medium.com/max/982/1*AiTBjfsoj3emarTpaeNgKQ.png" data-canonical-src="https://junit.org/junit5" width="200" height="240" />
+
+<img src="https://cdn-images-1.medium.com/max/982/1*AiTBjfsoj3emarTpaeNgKQ.png" data-canonical-src="https://junit.org/junit5" width="14%" />
 
 :link: <https://www.sciencedirect.com/science/article/pii/S0022053105001663>  
 :link: <http://econcs.seas.harvard.edu/files/econcs/files/toulis-ec11.pdf>  
