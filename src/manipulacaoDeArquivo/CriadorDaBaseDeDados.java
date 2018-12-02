@@ -20,7 +20,7 @@ import paciente.TiposDeSangue;
  * @author  candinhojr
  * @since   26.11.2018  
  */
-public class CriadorDeCasosDeTeste {
+public class CriadorDaBaseDeDados {
 
     private static String[] tipagemSanguinea = {
             "A_positivo",
@@ -36,7 +36,7 @@ public class CriadorDeCasosDeTeste {
     private static String doadorCadaver = "DoadorCadaver_";
     private static char[] caracteresHLA = {'A', 'B', 'C'};
     
-    public CriadorDeCasosDeTeste() {
+    public CriadorDaBaseDeDados() {
 		// TODO Auto-generated constructor stub
 	}
 

@@ -55,12 +55,16 @@ public class CompatibilidadeTest {
 		/// OUTRO CASO POSITIVO	
 		assertEquals(true, 
 				Compatibilidade.compatibilidadeHLA( 
-						new Doador("Doador_0", TiposDeSangue.AB_positivo,"CBBCAAACBA"), 
+						new Doador("Doador_0", TiposDeSangue.AB_positivo,"CBBCAAAABA"), 
 						new DoadorReceptor("Doador_1", TiposDeSangue.B_positivo,"BAABBCAA","Receptor_1",TiposDeSangue.AB_positivo,"CBBCAAAACC") 
 					) > 70,
 					
 				"O resultado esperado é que o doador 0 seja compatível com o receptor 1 mais de 70 porcento... Está correto?"
 			);
+		System.out.println(Compatibilidade.compatibilidadeHLA( 
+						new Doador("Doador_0", TiposDeSangue.AB_positivo,"CBBCAAAABA"), 
+						new DoadorReceptor("Doador_1", TiposDeSangue.B_positivo,"BAABBCAA","Receptor_1",TiposDeSangue.AB_positivo,"AABCAAACCC") 
+					));
 	
 		
 	}

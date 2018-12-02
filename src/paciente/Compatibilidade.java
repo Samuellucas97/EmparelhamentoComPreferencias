@@ -134,13 +134,28 @@ public class Compatibilidade {
     		return false;
     }
     
+//    /**
+//     * Verifica a porcentagem de compatibilidade de HLA entre o doador cadáver e o paciente
+//     * @param doador   Doador cadáver
+//     * @param receptor Receptor
+//     */
+//    public static int compatibilidadeHLA(Doador doador, DoadorReceptor receptor) {
+//        return 100-10*doador.getListaHLADoador().compareTo(receptor.getListaHLAReceptor());
+//    
+//    } 
+    
     /**
-     * Verifica a porcentagem de compatibilidade de HLA entre o doador cadáver e o paciente
+     * Verifica a porcentagem de compatibilidade entre o doador cadáver e o paciente
      * @param doador   Doador cadáver
      * @param receptor Receptor
      */
-    public static int compatibilidadeHLA(Doador doador, DoadorReceptor receptor) {
-        return 100-10*doador.getListaHLADoador().compareTo(receptor.getListaHLAReceptor());
-    
-    } 
+    public static int compatibilidadeHLA(Doador doador, DoadorReceptor receptor) { 
+        int quantidadeProteinasIguais = 0;
+    	for(int i = 0; i < doador.getListaHLADoador().length(); i++){
+            if (doador.getListaHLADoador().charAt(i) == receptor.getListaHLAReceptor().charAt(i) ){
+                quantidadeProteinasIguais+=10;
+            }
+    	} 
+    	return quantidadeProteinasIguais;
+    }
 }
