@@ -8,7 +8,7 @@ package grafos;
 
 import java.util.ArrayList;
 
-import controle.ControladorDeMedico;
+import algoritmos.BuscaEmProfundidade;
 
 /**
  * Representa um grafo por meio de uma lista de adjacência
@@ -20,15 +20,10 @@ public class Grafo {
     
 	private ArrayList<Arco> arcosDoGrafo;
     private ArrayList<Vertice> vertices; 
-    private ControladorDeMedico owner;
-    private int numeroDeVertices;
-    private int numeroDeArestas;
     
     public Grafo() {
     	this.arcosDoGrafo = new ArrayList<Arco>();
     	this.vertices = new ArrayList<Vertice>();
-    	this.numeroDeArestas = 0;
-    	this.numeroDeVertices = 0;
     }
     
     public Grafo(ArrayList<Vertice> vertices) {
@@ -38,11 +33,6 @@ public class Grafo {
         for(int i = 0; i < vertices.size(); i++) {         
             vertices.add(vertices.get(i));
         }
-        
-        //POR HORA NÃO CONSIDERAREMOS DOADORES CADAVERES
-//        for(int i = 0; i < doadoresCadaveres.size(); i++) {
-//            listaDeAdjacencia.add(new Vertice(doadoresCadaveres.get(i)));
-//        }
     }
     
     /**
@@ -69,11 +59,11 @@ public class Grafo {
     }
     
     public int getNumeroDeVertices() {
-        return this.numeroDeVertices;
+        return this.vertices.size();
     }
     
     public int getNumeroDeArestas() {
-        return this.numeroDeArestas;
+        return this.arcosDoGrafo.size();
     }
     
     public boolean adicionaArco(Arco arco) {
@@ -88,12 +78,4 @@ public class Grafo {
     	return vertices.get(posicao);
     }
     
-//    public static void main(String[] args) {
-//        Grafo grafo = new Grafo();
-//        for (int i = 0; i < 3; i++) {
-//        	Vertice v = new Vertice(i);
-//        	grafo.adicionaVertice(v);
-//		}
-//        grafo.imprimeGrafo();
-//    }
 }

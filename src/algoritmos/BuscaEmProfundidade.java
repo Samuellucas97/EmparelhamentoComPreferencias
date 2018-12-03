@@ -1,9 +1,11 @@
 package algoritmos;
 
-import java.awt.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import grafos.Arco;
 import grafos.Grafo;
+import grafos.Vertice;
 
 /**
  * Implementação da Busca em Profundidade	
@@ -23,6 +25,10 @@ public class BuscaEmProfundidade {
 	private int[] verticeAntecessorPeloCaminho;
 	private int[] corDosVertices;
 	private int tempo;
+	private Set<Arco> arestasDeArvore;
+    private Set<Arco> arestasDeAvanco;
+    private Set<Arco> arestasDeCruzamento;
+    private Set<Arco> arestasDeRetorno;
 	
 	private Grafo grafo;
 	
@@ -38,12 +44,14 @@ public class BuscaEmProfundidade {
 		this.verticesCompletamenteVisitados = new int[ grafo.getNumeroDeVertices() ];
 		this.verticeAntecessorPeloCaminho = new int[ grafo.getNumeroDeVertices() ];
 		this.tempo = 0;
-		
-		
+		this.arestasDeArvore = new HashSet<Arco>();
+		this.arestasDeAvanco = new HashSet<Arco>();
+		this.arestasDeCruzamento = new HashSet<Arco>();
+		this.arestasDeRetorno = new HashSet<Arco>();
+		this.corDosVertices = new int[grafo.getNumeroDeVertices()];
 	}
 	
 	/// MÉTODOS
-	
 	/**
 	 * Realiza o procedimento de visita da busca em profundidade
 	 * @param vertice	Posição do vértice no vetor
@@ -51,68 +59,63 @@ public class BuscaEmProfundidade {
 	 * @param corDosVertices	Vetor que armazena a cor de cada vértice do grafo
 	 * @return
 	 */
-	private int visita(int vertice) {
-		
-		corDosVertices[vertice] = cinza;
+	private int visita(Vertice vertice) {
+		this.corDosVertices[vertice.getChave()] = cinza;
 		this.tempo++;
-		this.verticeDescobertoPoremNaoComplematemnteVisitado[vertice] = tempo;
-		/**
-		 * Método copiado
-		List<Integer> adjacentes = g.listDeAdjacentes(u);
-        for (int v : adjacentes) {
-            if (cor[v] == 1) {
-                arestasDeRetorno.add(new Aresta(u, v));
-            }
-            if (cor[v] == 2) {
-                if (tempoDescoberta[u] < tempoDeDescoberta(v)) {
-                    arestasDeAvanco.add(new Aresta(u, v));
-                } else {
-                    arestasDeCruzamento.add(new Aresta(u, v));
-                }
-            }
-            if (cor[v] == 0) {
-                arestasDeArvore.add(new Aresta(u, v));
-                visit(v);
-            }
-        }
-		 */
-		
-		java.util.List<Arco> adjacentes = grafo.getVertice(vertice).getArcosAdjacentes();
+		this.verticeDescobertoPoremNaoComplematemnteVisitado[vertice.getChave()] = tempo;
+		java.util.List<Arco> adjacentes = grafo.getVertice(vertice.getChave()).getArcosAdjacentes();
 		
 		for (Arco a : adjacentes) {
-			if(corDosVertices[a.getVerticeDoInicio().getChave()] == cinza) {
-				//arestasDeRetorno.add(new Aresta(u, v));
+			if(corDosVertices[a.getVerticeDoFim().getChave()] == cinza) {
+				arestasDeRetorno.add(new Arco(vertice, a.getVerticeDoFim()));
 			} 
-			if(corDosVertices[a.getVerticeDoInicio().getChave()] == preto) {
-				if (verticeDescobertoPoremNaoComplematemnteVisitado[vertice] < tempoDeDescoberta(a.getVerticeDoInicio().getChave())) {
-                    //arestasDeAvanco.add(new Aresta(u, v));
+			
+			if(corDosVertices[a.getVerticeDoFim().getChave()] == preto) {
+				if (verticeDescobertoPoremNaoComplematemnteVisitado[vertice.getChave()] < 
+						tempoDeDescoberta(a.getVerticeDoFim().getChave())) {
+                    arestasDeAvanco.add(new Arco(vertice, a.getVerticeDoFim()));
                 } else {
-                    //arestasDeCruzamento.add(new Aresta(u, v));
+                    arestasDeCruzamento.add(new Arco(vertice, a.getVerticeDoFim()));
                 }
 			}
-			if(corDosVertices[a.getVerticeDoInicio().getChave()] == branco) {
-				//arestasDeArvore.add(new Aresta(u, v));
-				visita(a.getVerticeDoInicio().getChave());
+			
+			if(corDosVertices[a.getVerticeDoFim().getChave()] == branco) {
+				arestasDeArvore.add(new Arco(vertice, a.getVerticeDoFim()));
+				visita(a.getVerticeDoFim());
 			}
 		}
-		corDosVertices[vertice] = preto;
-		return verticesCompletamenteVisitados[vertice] = ++tempo;
+		corDosVertices[vertice.getChave()] = preto;
+		return verticesCompletamenteVisitados[vertice.getChave()] = ++tempo;
 	}
-//		
-//		this.verticeAntecessorPeloCaminho[vertice] = tempo + 1;
-//		
-//		if(!this.grafo.getVertice(vertice).getArcosAdjacentes().isEmpty()) {
-//			Arco a = this.grafo.getVertice(vertice).getArcosAdjacentes().get(0);
-//			while(a != null) {
-//				Integer v = a.getVerticeDoFim().getChave();
-//				if(corDosVertices[v] == branco) {
-//					this.verticeAntecessorPeloCaminho[v] = vertice;
-//					tempo = this.visita(v, tempo, corDosVertices);
-//				}
-//				a = this.grafo.getVertice(vertice).getArcosAdjacentes().;
-//			}
-//		}
 	
+	/**
+	 * @return the arestasDeArvore
+	 */
+	public Set<Arco> getArestasDeArvore() {
+		return arestasDeArvore;
+	}
+
+	/**
+	 * @return the arestasDeAvanco
+	 */
+	public Set<Arco> getArestasDeAvanco() {
+		return arestasDeAvanco;
+	}
+
+	/**
+	 * @return the arestasDeCruzamento
+	 */
+	public Set<Arco> getArestasDeCruzamento() {
+		return arestasDeCruzamento;
+	}
+
+	/**
+	 * @return the arestasDeRetorno
+	 */
+	public Set<Arco> getArestasDeRetorno() {
+		return arestasDeRetorno;
+	}
+
 	public int tempoDeDescoberta(int origem) {
         return verticeDescobertoPoremNaoComplematemnteVisitado[origem];
     }
@@ -121,10 +124,8 @@ public class BuscaEmProfundidade {
 	 * algoritmo de busca em profundidade baseado no conceito de backtrack
 	 */
 	public void buscaEmProfundidade() {
-		
 		int tempo = 0;
 		int[] coresDosVerticesDoGrafo = new int[ grafo.getNumeroDeVertices() ];
-		
 		/// INICIANDO A BUSCA PINTANDO TODOS OS VÉRTICES DE BRANCO TENDO EM VISTA QUE NÍNGUÉM FOI VISITADO AINDA.
 		for( int i=0; i < grafo.getNumeroDeVertices(); ++i ) {
 		
@@ -132,19 +133,14 @@ public class BuscaEmProfundidade {
 			
 			verticeAntecessorPeloCaminho[i] = -1; /// Além disso, inicializaremos também o vetor de vértices antecessores
 		}
-
+		
 		/// PERCORRENDO TODO O GRAFO
 		for( int i=0; i < grafo.getNumeroDeVertices(); ++i ) {
-			
 			if(coresDosVerticesDoGrafo[i] == branco){ 	///  O FATO DE QUE O VÉRTICE ESTAVA COM A COR BRANCA INDICA QUE ELE 
-														/// ESTÁ SENDO VISITADO PELA PRIMEIRA VEZ.
-				tempo = visita(i);
-				
+				/// ESTÁ SENDO VISITADO PELA PRIMEIRA VEZ.
+				tempo = visita(grafo.getVertice(i));
 			}
-		
 		}
-		
-			
 	}
 	
 }

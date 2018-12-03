@@ -52,7 +52,6 @@ public class ManipulacaoDeArquivo{
                 linha = buffReader.readLine();
                 conteudo += linha + "\n";
             }
-            
             buffReader.close();
             return conteudo;
 

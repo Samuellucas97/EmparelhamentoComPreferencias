@@ -40,7 +40,5 @@ public class Conversor {
 	
 	public static void main(String[] args) {
 		Conversor c = new Conversor();
-		System.out.println(c.getParesDoadoresReceptores());
-		System.err.println(c.getVertices());
 	}
 }

@@ -5,9 +5,11 @@
  */
 package manipulacaoDeArquivo;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /// CLASSES PRÓPRIAS
 import paciente.Compatibilidade;
@@ -20,7 +22,7 @@ import paciente.TiposDeSangue;
  * @author  candinhojr
  * @since   26.11.2018  
  */
-public class CriadorDeCasosDeTeste {
+public class CriadorDaBaseDeDados {
 
     private static String[] tipagemSanguinea = {
             "A_positivo",
@@ -36,7 +38,7 @@ public class CriadorDeCasosDeTeste {
     private static String doadorCadaver = "DoadorCadaver_";
     private static char[] caracteresHLA = {'A', 'B', 'C'};
     
-    public CriadorDeCasosDeTeste() {
+    public CriadorDaBaseDeDados() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -121,11 +123,6 @@ public class CriadorDeCasosDeTeste {
 	    
     }
 
-    public static void main(String[] args) throws IOException {
-        criarArquivoDoadoresReceptores(100);
-        criarArquivoDoadoresCadaveres(10);
-    }
-
 	private static void criarArquivoDoadoresCadaveres(int numeroTotalDeCadaveres){
 	
 		try {
@@ -150,7 +147,22 @@ public class CriadorDeCasosDeTeste {
 		catch(IOException e) {
 			System.err.println( e.getMessage() );
 		}
-	
 	}
-    
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader in = new BufferedReader (
+                new InputStreamReader (System.in));
+		System.out.print ("No. de pares doador-receptor a serem criados:"); 
+	    int nParesDoadorReceptor = Integer.parseInt (in.readLine());
+        criarArquivoDoadoresReceptores(nParesDoadorReceptor);
+        System.out.print ("No. de doadores-cadaveres a serem criados:"); 
+	    int nDoadoresCadaveres = Integer.parseInt (in.readLine());
+        criarArquivoDoadoresCadaveres(nDoadoresCadaveres);
+        String resposta = "Ambos os arquivos: \n"
+        		+ "- testeDoadoresReceptores.dat e \n"
+        		+ "- testeDoadoresCadaveres.dat \n"
+        		+ "foram criados com sucesso! \n"
+        		+ "Para conferir se os mesmos foram criados, basta acessar a pasta ./data";
+        System.out.println(resposta);
+    }
 }

@@ -34,4 +34,9 @@ public class Arco {
 		return verticeDoFim;
 	}
 	
+	public String toString() {
+		return verticeDoInicio.toString() + " " + verticeDoFim.toString();
+		
+	}
+	
 }
