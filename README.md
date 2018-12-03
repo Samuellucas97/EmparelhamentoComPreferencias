@@ -41,9 +41,10 @@ ou permanece no procedimento.
   
 
 - Conjunto de doador-receptor
-- Preferencias de cada doador-receptor que depende:
-	Tipos de sangue(**A+/-**, **B+/-**, **O+/-**, **AB+/-**)
-	Grupos de HLA (A, B, DR)
+- Preferencias de cada doador-receptor que depende:  
+	Tipos de sangue(**A+/-**, **B+/-**, **O+/-**, **AB+/-**)  
+	Grupos de HLA (A, B, DR)  
+	
 
 Sequência para definir as preferências:
 1. Compara-se o grupo sangüíneo do doador com o do
@@ -57,7 +58,10 @@ o receptor e o doador;
 
 ## Referência 
 
-<img src="https://junit.org/junit5/.." data-canonical-src="https://cdn-images-1.medium.com/max/982/1*AiTBjfsoj3emarTpaeNgKQ.png" width="200" height="240" />
+
+<img src="https://cdn-images-1.medium.com/max/982/1*AiTBjfsoj3emarTpaeNgKQ.png" data-canonical-src="https://junit.org/junit5" width="14%" />
+
+### Links  
 
 :link: <https://www.sciencedirect.com/science/article/pii/S0022053105001663>  
 :link: <http://econcs.seas.harvard.edu/files/econcs/files/toulis-ec11.pdf>  
