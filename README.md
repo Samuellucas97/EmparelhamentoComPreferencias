@@ -2,13 +2,13 @@
 ## Introdução
 Neste repositório encontra-se a implementação em Java do algoritmo _Top Trade Cycles Chains_ (**TTC Chains**) voltado para o problema de troca de rins cruzadas referente ao 3º trabalho da disciplina de ***Grafos***.
 
-- [Top Trading Cycles Chains](#top-trading-cycles-chains) - Informações sobre o algoritmo TTC e seu caso de teste. 
+- [Sobre o Top Trading Cycles Chains](#sobre-o-top-trading-cycles-chains) - Informações sobre o algoritmo TTC e seu caso de teste. 
 - [Links de referência](#links-de-referência) - Links relacionados ao projeto.
 - [Autores](#autores) - Autores que trabalharam no projeto.
 
 
 
-## Top Trading Cycles Chains 
+## Sobre o Top Trading Cycles Chains 
   
 ### Descrição do Algoritmo
 
