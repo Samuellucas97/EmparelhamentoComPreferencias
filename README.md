@@ -2,11 +2,10 @@
 ## Introdução
 Neste repositório encontra-se a implementação em Java do algoritmo _Top Trade Cycles Chains_ (**TTC Chains**) voltado para o problema de troca de rins cruzadas referente ao 3º trabalho da disciplina de ***Grafos***.
 
-### Organização do Repositório  
-  
-* `src`: Implementação das classes.   
-* `data`: Arquivos contendo dados para caso de teste. 
-* `bin`: Arquivos binários.
+- [Top Trading Cycles Chains](#top-trading-cycles-chains) - Informações sobre o algoritmo TTC e seu caso de teste. 
+- [Links de referência](#links-de-referência) - Links relacionados ao projeto.
+- [Autores](#autores) - Autores que trabalharam no projeto.
+
 
 
 ## Top Trading Cycles Chains 
@@ -56,21 +55,24 @@ imediata;
 4.Verifica-se a compatibilidade (HLA), semelhança entre
 o receptor e o doador;
 
-## Referência 
+## Links de referência 
 
 
-<img src="https://cdn-images-1.medium.com/max/982/1*AiTBjfsoj3emarTpaeNgKQ.png" data-canonical-src="https://junit.org/junit5" width="14%" />
+<p align="left">
+<a href="https://junit.org/junit5/"><img src="https://cdn-images-1.medium.com/max/982/1*AiTBjfsoj3emarTpaeNgKQ.png" width="14%"  />
+</p>
 
-### Links  
 
-:link: <https://www.sciencedirect.com/science/article/pii/S0022053105001663>  
-:link: <http://econcs.seas.harvard.edu/files/econcs/files/toulis-ec11.pdf>  
-:link: <http://econcs.seas.harvard.edu/files/econcs/files/toulis_gamesecon15.pdf>  
-:link: <https://www.tayfunsonmez.net/wp-content/uploads/2013/10/Kidneyexchange.pdf>
+[Article about The relationship between top trading cycles mechanism and top trading cycles and chains mechanism - Journal of Economic Theory](https://www.sciencedirect.com/science/article/pii/S0022053105001663)  
+[Article about A Random Graph Model of Kidney Exchanges:
+Efficiency, Individual-Rationality and Incentives](http://econcs.seas.harvard.edu/files/econcs/files/toulis-ec11.pdf)  
+[Slide show about Design and Analysis of Multi-Hospital Kidney Exchange
+Mechanisms Using Random Graphs](http://econcs.seas.harvard.edu/files/econcs/files/toulis_gamesecon15.pdf)  
+[Slide show about Kidney Exchange: Two Basic Models]https://www.tayfunsonmez.net/wp-content/uploads/2013/10/Kidneyexchange.pdf)
 
-## Autores :smiley:
-Candinho Luiz Dalla Brida Junior (<candinholuiz@gmail.com>)  
-Samuel Lucas de Moura Ferino (<samuel1797@gmail.com>)  
+## Autores  
+Candinho Luiz Dalla Brida Junior ( _candinholuiz@gmail.com_ )  e Samuel Lucas de Moura Ferino ( _samuel1797@gmail.com_ ).  
+:copyright: IMD/UFRN 2018.   
 
 
 
