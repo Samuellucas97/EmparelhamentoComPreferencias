@@ -60,12 +60,12 @@ o receptor e o doador;
 
 
 
-[Article about The relationship between top trading cycles mechanism and top trading cycles and chains mechanism](https://www.sciencedirect.com/science/article/pii/S0022053105001663)  
-[Article about A Random Graph Model of Kidney Exchanges:
+- [Article about The relationship between top trading cycles mechanism and top trading cycles and chains mechanism](https://www.sciencedirect.com/science/article/pii/S0022053105001663)  
+- [Article about A Random Graph Model of Kidney Exchanges:
 Efficiency, Individual-Rationality and Incentives](http://econcs.seas.harvard.edu/files/econcs/files/toulis-ec11.pdf)  
-[Slide show about Design and Analysis of Multi-Hospital Kidney Exchange
+- [Slide show about Design and Analysis of Multi-Hospital Kidney Exchange
 Mechanisms Using Random Graphs](http://econcs.seas.harvard.edu/files/econcs/files/toulis_gamesecon15.pdf)  
-[Slide show about Kidney Exchange: Two Basic Models](https://www.tayfunsonmez.net/wp-content/uploads/2013/10/Kidneyexchange.pdf)
+- [Slide show about Kidney Exchange: Two Basic Models](https://www.tayfunsonmez.net/wp-content/uploads/2013/10/Kidneyexchange.pdf)
 
 ## Autores  
 Candinho Luiz Dalla Brida Junior ( _candinholuiz@gmail.com_ )  e Samuel Lucas de Moura Ferino ( _samuel1797@gmail.com_ ).  
