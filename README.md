@@ -1,4 +1,4 @@
-# Emparelhamento com prefêrencias
+# Emparelhamento com preferências
 ## Introdução
 Neste repositório encontra-se a implementação em Java do algoritmo _Top Trade Cycles Chains_ (**TTC Chains**) voltado para o problema de troca de rins cruzadas referente ao 3º trabalho da disciplina de ***Grafos***.
 
