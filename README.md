@@ -68,8 +68,15 @@ Mechanisms Using Random Graphs](http://econcs.seas.harvard.edu/files/econcs/file
 - [Slide show about Kidney Exchange: Two Basic Models](https://www.tayfunsonmez.net/wp-content/uploads/2013/10/Kidneyexchange.pdf)
 
 ## Autores  
-Candinho Luiz Dalla Brida Junior ( _candinholuiz@gmail.com_ )  e Samuel Lucas de Moura Ferino ( _samuel1797@gmail.com_ ).  
-:copyright: IMD/UFRN 2018.   
+
+
+
+## Autores  
+
+| Name: | Github: | email: |  
+| ---------- | ------------- | ------------- |
+|`Samuel Lucas de Moura Ferino` 	| https://github.com/Samuellucas97 |_samuellucas97@ufrn.edu.br_  
+|`Candinho Luiz Dalla Brida Junior` | |  _candinholuiz@gmail.com_
 
 
 
