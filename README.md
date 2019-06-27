@@ -76,7 +76,7 @@ Mechanisms Using Random Graphs](http://econcs.seas.harvard.edu/files/econcs/file
 | Name: | Github: | email: |  
 | ---------- | ------------- | ------------- |
 |`Samuel Lucas de Moura Ferino` 	| https://github.com/Samuellucas97 |_samuellucas97@ufrn.edu.br_  
-|`Candinho Luiz Dalla Brida Junior` | |  _candinholuiz@gmail.com_
+|`Candinho Luiz Dalla Brida Junior` | https://github.com/candinhojr |  _candinholuiz@gmail.com_
 
 
 
