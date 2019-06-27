@@ -67,9 +67,6 @@ Efficiency, Individual-Rationality and Incentives](http://econcs.seas.harvard.ed
 Mechanisms Using Random Graphs](http://econcs.seas.harvard.edu/files/econcs/files/toulis_gamesecon15.pdf)  
 - [Slide show about Kidney Exchange: Two Basic Models](https://www.tayfunsonmez.net/wp-content/uploads/2013/10/Kidneyexchange.pdf)
 
-## Autores  
-
-
 
 ## Autores  
 
